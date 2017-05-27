@@ -1,0 +1,3201 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    182688,       3193]
+NotebookOptionsPosition[    181967,       3163]
+NotebookOutlinePosition[    182326,       3179]
+CellTagsIndexPosition[    182283,       3176]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"Get", "[", 
+  RowBox[{"FileNameJoin", "[", 
+   RowBox[{"{", 
+    RowBox[{
+    "\"\</Users/pauljean/code/wolfdown\>\"", ",", "\"\<functions.m\>\""}], 
+    "}"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.6958635599315557`*^9, 3.6958635837430353`*^9}, {
+  3.7048897565418587`*^9, 3.7048897585950336`*^9}, {3.704908600882419*^9, 
+  3.704908604071927*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"nbFiles", "=", 
+  RowBox[{"FileNames", "[", 
+   RowBox[{
+   "\"\<*.nb\>\"", ",", "\"\</Users/pauljean/Dropbox/nks\>\"", ",", 
+    "Infinity"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.704908634300963*^9, 3.7049086518192472`*^9}, {
+  3.704908701043692*^9, 3.704908710122744*^9}, {3.704908967157772*^9, 
+  3.7049089686216*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"/Users/pauljean/Dropbox/nks/batch/010506/rule18-1-5-2006.nb\"\>\
+", ",", "\<\"/Users/pauljean/Dropbox/nks/batch/010606/ECAM-run-times.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/batch/021606/021606-testqis1-batch.\
+nb\"\>", ",", "\<\"/Users/pauljean/Dropbox/nks/batch/022306/022306.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/batch/022306.yeti.022306-15:27:24/\
+022306/022306.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/batch/batch-template-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/batch/batch-template.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/batch/.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/blog/blog-colors.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/blog/blogtools.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/blog/create-blog-notebook.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/blog/create-blog-notebook-notes.nb\"\
+\>", ",", "\<\"/Users/pauljean/Dropbox/nks/blog/create-palette-code.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/blog/export.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/blog/html-formatting/html-formatting-\
+01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/blog/html-formatting/html-formatting-\
+export.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/blog/notes-thumbnails.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/blog/palletes-practice.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/blog/posts/2010/10/30/rule-18-random-\
+walk-featured-image.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/blog/posts/2010/10/30/rule-18-random-\
+walk.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/blog/posts/2010/11/13/rule-18-random-\
+walk-p2.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/blog/posts/2010/12/12/rule-18-random-\
+walk-p3.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/blog/posts/2011/01/21/test-post-\
+012111.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/blog/posts/2011/02/08/rule-18-random-\
+walk-p4-020811.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/blog/posts/2011/02/12/weblog-client-\
+021211.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/blog/posts/2011/02/15/simple-example-\
+post.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/blog/posts/2011/02/26/batch-job-rule-\
+18-autocorrelation-r-2000.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/blog/posts/2011/02/26/rule-18-random-\
+walk-022611.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/blog/posts/2011/02/27/correlation-\
+function-022711.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/blog/posts/2011/02/27/long-range-\
+correlations-rule-18-walk.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/blog/posts/2011/03/07/batch-average-\
+correlations-030711.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/blog/posts/2011/03/07/rule-18-\
+correlation-vs-system-size-030711.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/blog/posts/2011/03/07/rule-18-corr-\
+vs-system-size-031211.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/blog/posts/2011/03/07/rule-18-corr-\
+vs-system-size-031311.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/blog/posts/2011/03/07/test-run-\
+pauljeanlx.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/blog/posts/2011/03/13/rule-18-\
+correlations-031311.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/blog/posts/2011/03/27/rule-18-\
+correlations-032711.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/blog/posts/2011/04/02/random-walk-\
+circle-transform.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/blog/posts/2011/09/20/rule-146-\
+monolith-width-vs-timestep.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/blog/posts/2011/11/06/ECAM-T-density-\
+vs-initial-density-110611.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/blog/posts/2011/12/3/test.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/blog/posts/2012/01/01/blog-scratch.\
+nb\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/blog/posts/2012/01/01/k2-r2-growth-rule-\
+670738548.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/blog/posts/2012/04/22/question-\
+rule146-particle-control.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/blog/posts/2012/06/24/rule-146-\
+monolith-width-vs-timestep-width-503-periodic.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/blog/test-blog-notebook-2-blog.nb\"\>\
+", ",", "\<\"/Users/pauljean/Dropbox/nks/blog/test-blog-notebook-2.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/blog/test-blog-notebook.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/blog/Untitled-2.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/blog/Untitled-50.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/blog/UserInterfaceProgramming.nb\"\>\
+", ",", "\<\"/Users/pauljean/Dropbox/nks/class-3-problem-entropy-formulation.\
+nb\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2005/102805-hofstadter.nb\"\>\
+", ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2005/103005-kovas-\
+recursive-sequences.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2005/103005-richard-\
+phillips-cellular-automaton.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2005/103005-to-do.nb\"\
+\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2005/110905-richard-phillips-\
+ca-error.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2005/pics/pic-links.\
+nb\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2005/presentation/figures/10-\
+all-ecam-1-random/all-ecam-1-random.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2005/presentation/\
+figures/11-class-3-ecam-1/class-3-ecam-1.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2005/presentation/\
+figures/12-rule-30-progression/rule-30-progression.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2005/presentation/\
+figures/13-large-T/large-T.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2005/presentation/\
+figures/14-large-T-compressed/large-T-compressed.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2005/presentation/\
+figures/15-emulation-1/emulation-1.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2005/presentation/\
+figures/16-emulation-2/emulation-2.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2005/presentation/\
+figures/17-emulation-3/emulation-3.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2005/presentation/\
+figures/18-emulation-example-1/emulation-example-1.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2005/presentation/\
+figures/19-emulation-example-2/emulation-example-2.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2005/presentation/\
+figures/1-title-page/title-page.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2005/presentation/\
+figures/2-eca-rule-table/eca-rule-table.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2005/presentation/\
+figures/3-all-eca/all-eca.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2005/presentation/\
+figures/4-all-eca-random/all-eca-random.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2005/presentation/\
+figures/5-ecam-rule-icon/ecam-rule-icon.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2005/presentation/\
+figures/6-ecam-rule-table/ecam-rule-table.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2005/presentation/\
+figures/7-ecam-evolution/ecam-evolution.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2005/presentation/\
+figures/8-all-ecam-1-icon/all-ecam-1-icon.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2005/presentation/\
+figures/9-all-ecam-1/all-ecam-1.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2005/presentation/\
+presentation-materials.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2005/talks/eric-\
+rowland/The Right Side of Rule 30.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/061506-notes.nb\"\
+\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/061606-notes.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/061706-notes.nb\"\
+\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/abstract-notes.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/letourneau-\
+abstract.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/pjl-nks-2006-\
+presentation/functions/AllCases.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/pjl-nks-2006-\
+presentation/functions/ArrayPlotWithLegend.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/pjl-nks-2006-\
+presentation/functions/BlockSimpleInit.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/pjl-nks-2006-\
+presentation/functions/C2.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/pjl-nks-2006-\
+presentation/functions/CAGrowthRate.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/pjl-nks-2006-\
+presentation/functions/CreateFigureNotebook.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/pjl-nks-2006-\
+presentation/functions/CreateFunctionNotebook.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/pjl-nks-2006-\
+presentation/functions/CreateLitSummaryNotebook.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/pjl-nks-2006-\
+presentation/functions/CreateProjectNotebook.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/pjl-nks-2006-\
+presentation/functions/CyclicUnion.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/pjl-nks-2006-\
+presentation/functions/ECAMEmulatorRuleNum.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/pjl-nks-2006-\
+presentation/functions/ECAMEncodedInitial.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/pjl-nks-2006-\
+presentation/functions/ECAM.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/pjl-nks-2006-\
+presentation/functions/ECAMProbs.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/pjl-nks-2006-\
+presentation/functions/ECARuleIcon.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/pjl-nks-2006-\
+presentation/functions/ECARuleTable.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/pjl-nks-2006-\
+presentation/functions/Edges.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/pjl-nks-2006-\
+presentation/functions/EquivalentRules.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/pjl-nks-2006-\
+presentation/functions/findCycle.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/pjl-nks-2006-\
+presentation/functions/InsideCA.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/pjl-nks-2006-\
+presentation/functions/JoinBlocks.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/pjl-nks-2006-\
+presentation/functions/LeftDiagonal.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/pjl-nks-2006-\
+presentation/functions/MakeRule.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/pjl-nks-2006-\
+presentation/functions/MapTo.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/pjl-nks-2006-\
+presentation/functions/MyArrayPlot.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/pjl-nks-2006-\
+presentation/functions/NonRepRules.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/pjl-nks-2006-\
+presentation/functions/p.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/pjl-nks-2006-\
+presentation/functions/ProbabilityOfPerturbationSpreading.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/pjl-nks-2006-\
+presentation/functions/RandomInit.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/pjl-nks-2006-\
+presentation/functions/ShiftedCAfunction.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/pjl-nks-2006-\
+presentation/functions/toLatex.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/pjl-nks-2006-\
+presentation/materials-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/pjl-nks-2006-\
+presentation/materials-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/pjl-nks-2006-\
+presentation/materials-03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/pjl-nks-2006-\
+presentation/materials-04.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/pjl-nks-2006-\
+presentation/materials-05.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/pjl-nks-2006-\
+presentation/materials-06.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/pjl-nks-2006-\
+presentation/nks2006-letourneau.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/pjl-nks-2006-\
+presentation/ShiftedCA/ShiftedCA.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/pjl-nks-2006-\
+presentation/Utilities/CAUtilities.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/pjl-nks-2006-\
+presentation/Utilities/Enumeration.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/pjl-nks-2006-\
+presentation/Utilities/Initials.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/pjl-nks-2006-\
+presentation/Utilities/MyGraphics.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/pjl-nks-2006-\
+presentation/Utilities/Plots.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/talk/materials-\
+01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/talk/materials-\
+02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/talk/materials-\
+03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/talk/materials-\
+04.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/talk/materials-\
+05.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/talk/materials-\
+06.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/talk/nks2006-\
+letourneau-deprecated.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/talk/nks2006-\
+letourneau.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2006/talk/template.nb\
+\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2007/materials-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2007/materials-02.nb\"\
+\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2007/materials-03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2007/nks-2007-paul-\
+jean.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2007/r146-01-width-\
+dependence.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKS2007/template.nb\"\>",
+    ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKSMidwest2008/misc/\
+MonolithsInCellularAutomaton146-author.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKSMidwest2008/talk/\
+Monoliths-summary-091808.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKSMidwest2008/talk/NKS-\
+Midwest-Letourneau-presentation-extra.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKSMidwest2008/talk/NKS-\
+Midwest-Letourneau-presentation.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKSMidwest2008/talk/NKS-\
+Midwest-Letourneau-presentation-withcode.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/conferences/NKSMidwest2008/travel/\
+NKS-Midwest-abstract-082408.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/020109/rule-146-persistent-\
+structures-020109.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/021209/rule-146-structures-\
+021209.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/021609/rule-146-021609.nb\"\
+\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/datewise/030609/rule-146-even-odd-\
+distribution-030609.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/030709/rule-146-even-run-\
+distribution.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/032809-pre-images/rule-146-\
+pre-images.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/040109/rule-146-even-\
+triangle-correlations.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/040409/rule-146-results.nb\"\
+\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/datewise/040509/rule-146-boundary-density.nb\
+\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/datewise/040509/rule-146-boundary-diffusion.\
+nb\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/datewise/040709/rule-146-even-odd-\
+distribution-040709.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/041109/rule-146-large-scale.\
+nb\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/datewise/052409/rule-146-constraints.nb\"\>",
+    ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/062009-rule-146-integer-\
+partitions/rule-146-IntegerPartitions.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/070710-rule-146-run-length-\
+cluster-code/rule-146-run-length-cluster-code.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/070710-rule-146-run-length-\
+cluster-code/run-lengths-parallel.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/071009-pre-images-triangles/\
+pre-images-triangles.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/071110-rule-146-repetitive-\
+backgrounds/rule-146-background-10100.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/071110-rule-146-repetitive-\
+backgrounds/rule-146-repetitive-backgrounds-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/071110-rule-146-repetitive-\
+backgrounds/rule-146-repetitive-backgrounds.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/071709-rule-90-\
+perturbations/rule-90-perturbations-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/102109-monolith-width-\
+dependence/rule-146-monolith-width-dependence.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/122608/rule-146-122608.nb\"\
+\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/datewise/2008/122608/rule-146-122608.nb\"\>",
+    ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2009/020109/rule-146-\
+persistent-structures-020109.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2009/021209/rule-146-\
+structures-021209.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2009/021609/rule-146-021609.\
+nb\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/datewise/2009/030609/rule-146-even-odd-\
+distribution-030609.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2009/030709/rule-146-even-\
+run-distribution.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2009/032809/rule-146-pre-\
+images.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2009/032809-rule-146-pre-\
+images/rule-146-pre-images.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2009/040109/rule-146-even-\
+triangle-correlations.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2009/040409-rule-146-\
+results/rule-146-results.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2009/040509-rule-146-\
+boundary-density/rule-146-boundary-density.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2009/040509-rule-146-\
+boundary-density/rule-146-boundary-diffusion.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2009/040709/rule-146-even-\
+odd-distribution-040709.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2009/041109/rule-146-large-\
+scale.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2009/052409/rule-146-\
+constraints.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2009/071009-pre-images-\
+triangles/pre-images-triangles.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2009/091109-rules-126-18-90-\
+structures/091109-rules-126-18-90-structures.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2009/091909-rule-146-\
+equivalent-rules/rule-146-equivalent-rules.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2009/100309-structures-vs-\
+system-width/rule-146-structures-vs-system-width.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2009/111409-rule-146-\
+structure-density/rule-146-structure-density.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2009/120209-rule-18-pre-\
+images/rule-18-pre-images.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2010/022710-rule-146-to-90-\
+transform/rule-146-to-90-transform.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2010/022810-rule-146-parity-\
+phase-space/rule-146-parity-phase-space.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2010/030610-rule-146-\
+particle-count-vs-phase-densities/phase-density-p1f-vs-p1i-const-p0i-data-\
+analysis.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2010/030610-rule-146-\
+particle-count-vs-phase-densities/rule-146-particle-count-vs-phase-densities.\
+nb\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/datewise/2010/030810-rule-146-phase-space-\
+trajectories/rule-146-phase-space-trajectories.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2010/030910-rule-146-\
+density-coupled-map/rule-146-density-coupled-map.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2010/031310-rule-146-\
+correlations-vs-particle-count/rule-146-correlations-vs-particle-count.nb\"\>\
+", ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2010/031810-rule-146-\
+correlations-vs-particle-count-smaller-system/rule-146-correlations-vs-\
+particle-count-smaller-system.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2010/032110-rule-146-phase-\
+space-trajectories-vector-field/rule-146-phase-space-trajectories-vector-\
+field.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2010/032210-rule-146-\
+partial-updating/rule-146-partial-updating.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2010/032810-rule-146-phase-\
+densities-mean-field/figures/p1f-vs-p1i/p1f-vs-p1i.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2010/032810-rule-146-phase-\
+densities-mean-field/rule-146-phase-densities-mean-field.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2010/040210-rule-146-mean-\
+field-densities/mean-field-densities.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2010/041110-rule-146-phase-\
+number/rule-146-phase-number.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2010/051110-rule-146-linear-\
+operator/rule-146-linear-operator.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2010/053010-rule-146-mean-\
+field-phase-density/rule-146-mean-field-phase-density.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2010/060510-rule-146-mean-\
+field-phase-trajectory/rule-146-mean-field-phase-trajectory.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2010/060510-rule-146-phase-\
+density-complex-number/rule-146-phase-density-complex-number.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2010/060810-rule-146-\
+monolith-widths/rule-146-monolith-widths.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2010/061110-rule-146-\
+monolith-widths/rule-146-monolith-widths.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2010/061210-rule-146-\
+monolith-widths-2^n/max-run-length.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2010/061210-rule-146-\
+monolith-widths-2^n/rule-146-monolith-widths-2^n.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2010/061210-rule-146-\
+monolith-widths-2^n/Untitled-15.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2010/061210-rule-146-parity-\
+colors/rule-146-parity-colors.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2010/070710-rule-146-run-\
+length-cluster-code/rule-146-run-length-cluster-code.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2010/070710-rule-146-run-\
+length-cluster-code/run-lengths-data-analysis-consolidated.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2010/070710-rule-146-run-\
+length-cluster-code/run-lengths-data-analysis.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2010/070710-rule-146-run-\
+length-cluster-code/run-lengths-parallel.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2010/071110-rule-146-\
+repetitive-backgrounds/launch.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2010/071110-rule-146-\
+repetitive-backgrounds/rule-146-background-10100.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2010/071110-rule-146-\
+repetitive-backgrounds/rule-146-repetitive-backgrounds-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2010/071110-rule-146-\
+repetitive-backgrounds/rule-146-repetitive-backgrounds-03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2010/071110-rule-146-\
+repetitive-backgrounds/rule-146-repetitive-backgrounds-04.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2010/071110-rule-146-\
+repetitive-backgrounds/rule-146-repetitive-backgrounds.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2010/071810-rule-146-\
+background-differences/launch.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2010/071810-rule-146-\
+background-differences/rule-146-background-differences-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2010/072810-random-walks-\
+design/random-walks-design.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2010/091910-rule-146-\
+background-10100/rule-146-background-10100.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2010/101710-rule-18-random-\
+walk/rule-18-random-walk-featured-image.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2010/101710-rule-18-random-\
+walk/rule-18-random-walk.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2010/101710-rule-18-random-\
+walk/scratch.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2011/081311-dma-rule-233-78/\
+081311-dma-rule-233-78.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2011/122211-rule-146-phase-\
+density-convergence/rule-146-phase-density-convergence.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2011/122411-rule-146-N1-N2-\
+conserved/rule-146-N1-N2-conserved.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/datewise/2011/122511-gutowitz-\
+entropy/gutowitz-entropy.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/forum/111005-todd-rowland-\
+enumeration.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/forum/caterrain5.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/forum/cellularautomatonfluids.nb\"\>\
+", ",", "\<\"/Users/pauljean/Dropbox/nks/forum/downloadableprograms.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/forum/ECAM-difference-patterns-02.nb\
+\"\>", ",", "\<\"/Users/pauljean/Dropbox/nks/forum/enumerating directed \
+networks using the pairing function.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/forum/enumspace-5.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/forum/exploring.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/forum/NKS-Intro.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/forum/posts/110905-correlations/\
+110905-forum-post-attachment.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/forum/posts/110905-correlations/\
+110905-forum-post.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/forum/raplot.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/AllCases.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/AllMonolithInits.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/ArrayPlotWithLegend.nb\"\>\
+", ",", "\<\"/Users/pauljean/Dropbox/nks/functions/BlockSimpleInit.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/BooleanCA.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/BooleanCARule.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/BooleanCARuleTable.nb\"\>",
+    ",", "\<\"/Users/pauljean/Dropbox/nks/functions/BooleanCASTG.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/BooleanNetworkEvolve.nb\"\>\
+", ",", "\<\"/Users/pauljean/Dropbox/nks/functions/BooleanNetworkSTG.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/C2.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/CAGrowthRate.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/CreateFigureNotebook.nb\"\>\
+", ",", "\<\"/Users/pauljean/Dropbox/nks/functions/CreateFunctionNotebook.nb\"\
+\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/functions/CreateLitSummaryNotebook.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/CreateProjectNotebook.nb\"\
+\>", ",", "\<\"/Users/pauljean/Dropbox/nks/functions/CyclicUnion.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/ECAM1MeanFieldDensity.nb\"\
+\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/functions/ECAM1MeanFieldEquilibriumDensity.\
+nb\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/functions/ECAMeanFieldDensity.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/\
+ECAMeanFieldEquilibriumDensity.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/ECAMEmulatorRuleNum.nb\"\>\
+", ",", "\<\"/Users/pauljean/Dropbox/nks/functions/ECAMEncodedInitial.nb\"\>",
+    ",", "\<\"/Users/pauljean/Dropbox/nks/functions/ECAMLightCone.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/ECAM.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/ECAMProbs.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/ECARuleIcon.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/ECARuleTable.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/Edges.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/EnumBooleanNetwork.nb\"\>",
+    ",", "\<\"/Users/pauljean/Dropbox/nks/functions/EquivalentBooleanRules.nb\
+\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/functions/EquivalentRules.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/findCycle.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/GenomeData.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/HighlightCA.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/InDegreeDistribution.nb\"\>\
+", ",", "\<\"/Users/pauljean/Dropbox/nks/functions/InsideCA.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/JoinBlocks.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/LeftDiagonal.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/LetterCell.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/MakeRule.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/MapTo.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/MonolithFA.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/MyArrayPlot.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/MyGraphPlot.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/NetworkToArrows.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/NiceGraphicsLabel.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/NonRepRules.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/Period.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/PermNet.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/PermNetSameTest.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/PerturbedECAM.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/\
+PlotSpaceTimeSpinCorrelationArray.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/p.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/PPSGraphic.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/\
+ProbabilityOfPerturbationSpreading.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/pT.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/RandomDNASequence.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/RandomInit.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/RuleAnimate.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/RuleAnimateWithRuleTable.\
+nb\"\>", ",", "\<\"/Users/pauljean/Dropbox/nks/functions/ShiftedCAfunction.nb\
+\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/functions/SpaceTimeCorrelationArray.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/\
+SpaceTimeSpinCorrelationArray.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/SS2006.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/toLatex.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/functions/UnenumBooleanNetwork.nb\"\>\
+", ",", "\<\"/Users/pauljean/Dropbox/nks/grad/awards/ucgradopencompetition/\
+onlineapp/OnlineAppFields.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/awards/ucgradopencompetition/\
+researchproposal/ResearchProposal.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/awards/ucgradopencompetition/\
+researchproposal/ResearchProposal-notes-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/awards/ucgradopencompetition/\
+researchproposal/ResearchProposal-notes.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/awards/ucgradopencompetition/\
+researchproposal/ResearchProposal-timeline.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/courses/691/041006/abstract.nb\"\
+\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/grad/courses/691/041006/materials/\
+presentation-materials-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/courses/691/041006/materials/\
+presentation-materials.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/courses/691/041006/materials/\
+WebDiagram.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/courses/691/041006/outline.nb\"\
+\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/grad/courses/691/041006/presentation.nb\"\>",
+    ",", "\<\"/Users/pauljean/Dropbox/nks/grad/courses/691/041006/wording.nb\"\
+\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/grad/courses/cm/hw/hw1/HW1-prob1-02-soln.nb\"\
+\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/grad/courses/cm/hw/hw1/HW1-prob1.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/courses/cm/hw/hw1/HW1-prob2.nb\"\
+\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/grad/courses/cm/hw/hw1/HW1-prob3.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/courses/cm/hw/hw2/HW2-prob1-01.\
+nb\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/grad/courses/cm/hw/hw2/HW2-prob2-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/courses/cm/hw/hw2/HW2-prob3-01.\
+nb\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/grad/courses/cm/hw/hw2/HW2-prob4-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/courses/cm/hw/hw2/HW2-prob4-02-\
+soln.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/courses/cm/hw/hw3/HW3-prob1.nb\"\
+\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/grad/courses/cm/hw/hw3/HW3-prob2.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/courses/cm/hw/hw3/HW3-prob3.nb\"\
+\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/grad/courses/cm/hw/hw4/HW4-prob1.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/courses/cm/hw/hw4/HW4-prob2-\
+calcs.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/courses/cm/hw/hw4/HW4-prob2.nb\"\
+\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/grad/courses/cm/hw/hw5/HW5-prob1-confusions.\
+nb\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/grad/courses/cm/hw/hw5/HW5-prob1.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/courses/cm/hw/hw5/HW5-prob2.nb\"\
+\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/grad/courses/cm/hw/mt/MT-prob1.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/courses/cm/hw/mt/MT-prob2.nb\"\>\
+", ",", "\<\"/Users/pauljean/Dropbox/nks/grad/courses/cm/hw/mt/MT-prob3.nb\"\>\
+", ",", "\<\"/Users/pauljean/Dropbox/nks/grad/courses/cm/hw/mt/MT-prob4.nb\"\>\
+", ",", "\<\"/Users/pauljean/Dropbox/nks/grad/courses/qft/HW1/HW1-prob1-a-\
+calcs.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/courses/qft/HW1/HW1-prob1-a.nb\"\
+\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/grad/courses/qft/HW1/HW1-prob1-b-calcs.nb\"\>\
+", ",", "\<\"/Users/pauljean/Dropbox/nks/grad/courses/qft/HW1/HW1-prob1-c.nb\"\
+\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/grad/courses/qft/HW1/HW1-prob2-a.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/courses/qft/HW1/HW1-prob2-b.nb\"\
+\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/grad/courses/qft/HW1/HW1-prob3.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/courses/qft/HW1/HW1-prob3-path1-\
+calcs.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/courses/qft/HW1/HW1-prob3-path1.\
+nb\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/grad/courses/qm/hw/hw1/HW1-prob1-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/courses/qm/hw/hw1/HW1-prob4-01.\
+nb\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/grad/courses/qm/hw/hw2/HW2-prob1-a.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/courses/qm/hw/hw2/HW2-prob1-b.\
+nb\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/grad/courses/qm/hw/hw2/HW2-prob1-c.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/courses/qm/hw/hw2/HW2-prob2-\
+calcs.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/courses/qm/hw/hw2/HW2-prob2e-\
+wrong.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/courses/qm/hw/hw2/HW2-prob2.nb\"\
+\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/grad/courses/qm/hw/hw2/HW2-prob2-partf-calcs.\
+nb\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/grad/courses/qm/hw/hw2/HW2-prob3-calcs.nb\"\>\
+", ",", "\<\"/Users/pauljean/Dropbox/nks/grad/courses/qm/hw/hw2/HW2-prob3.nb\"\
+\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/grad/courses/qm/hw/hw3/HW3-prob1.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/courses/qm/hw/hw3/HW3-prob2.nb\"\
+\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/grad/courses/qm/hw/hw3/HW3-prob3.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/courses/qm/hw/hw3/HW3-prob4-\
+calcs.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/courses/qm/hw/hw3/HW3-prob4.nb\"\
+\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/grad/courses/qm/hw/hw3/HW3-prob6.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/courses/qm/hw/hw4/HW4-prob2-\
+calcs.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/courses/qm/project/project.nb\"\
+\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/grad/courses/qm/project/project-pedagogy.nb\"\
+\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/grad/courses/qm/project/project-solutions.nb\
+\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/grad/courses/sm/HW1/HW1-allprobs.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/courses/sm/HW1/HW1-prob1-a.nb\"\
+\>", ",", "\<\"/Users/pauljean/Dropbox/nks/grad/courses/sm/HW1/HW1-prob1-b.nb\
+\"\>", ",", "\<\"/Users/pauljean/Dropbox/nks/grad/courses/sm/HW1/HW1-prob2.nb\
+\"\>", ",", "\<\"/Users/pauljean/Dropbox/nks/grad/courses/sm/HW1/HW1-prob3.nb\
+\"\>", ",", "\<\"/Users/pauljean/Dropbox/nks/grad/courses/sm/HW1/HW1-prob4.nb\
+\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/grad/datewise/2005/031405-openMP-seminar/\
+NotesDuringSeminar.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/datewise/2005/032805-\
+cagrowthrates/SW-liveexpt-032905.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/datewise/2005/040305-\
+renormalization-numbertheory/ideas.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/datewise/2005/101105-ddes/\
+BuchstabFunction.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/datewise/2005/101105-ddes/\
+DickmanFunction.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/datewise/2005/102105-turbulence-\
+memory/balescu-notes.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/datewise/2005/110205-ca-entropy/\
+110205-grassberger-notes.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/datewise/2005/110205-ca-entropy/\
+110205-gutowitz-notes.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/datewise/2005/111005-coupling-\
+constant-correlation/nagay-notes.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/datewise/2005/111005-coupling-\
+constant-correlation/oliveira-notes.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/datewise/2005/112205-hamming-\
+distance-correlation/Anteneodo-notes.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/all-eca/caption/all-eca-caption.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/all-eca/figure/all-eca.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/all-ecam-02/all-ecam-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/all-ecam-03/all-ecam-03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/all-ecam-04/all-ecam-04.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/all-ecam-1/caption/all-ecam-1-caption.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/all-ecam-1/figure/all-ecam-1.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/all-ecam-1-random/caption/all-ecam-1-random-caption.nb\"\>",
+    ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/all-ecam-1-random/figure/all-ecam-1-random.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/all-ecam-2/all-ecam-2.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/all-ecam-2-random/all-ecam-2-random.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/all-ecam/all-ecam.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/all-ecam-T-block-density/figure/all-ecam-T-block-density.nb\
+\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-build-new/\
+figures/all-ecam-T-block-density-random/figure/all-ecam-T-block-density-\
+random.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/all-ecam-T/figure/all-ecam-T.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/all-ecam-T-random/figure/all-ecam-T-random.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/all-eca-random/caption/all-eca-random-caption.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/all-eca-random/figure/all-eca-random.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/block-representation-01/figure/block-representation-01.nb\"\
+\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-build-new/\
+figures/block-representation-02/figure/block-representation-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/coarse-graining-01/figure/coarse-graining-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/correlations-01/figure/correlations-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/correlations-02/correlations-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/correlations-03/correlations-03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/correlations-04-2/correlations-04-2.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/correlations-04-3/correlations-04-3.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/correlations-04-4/correlations-04-4.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/correlations-04/correlations-04.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/correlations-05/correlations-05.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/correlations-06-2/correlations-06-2.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/correlations-06-3/correlations-06-3.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/correlations-06-4/correlations-06-4.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/correlations-06/correlations-06.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/correlations-07/correlations-07.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/correlations-07/T-independent-rules.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/correlations-08/correlations-08.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/correlations-09/correlations-09.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/correlations-10-2/correlations-10-2.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/correlations-10-3/correlations-10-3.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/correlations-10-4/correlations-10-4.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/correlations-10/correlations-10.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/correlations-11/correlations-11.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/densities-01/figure/densities-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/densities-02/figure/densities-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/densities-03/figure/densities-03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/densities-04/figure/densities-04.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/densities-05/figure/densities-05.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/densities-06/figure/densities-06.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/densities-07/figure/densities-07.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/densities-08/figure/densities-08.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/densities-09/figure/densities-09.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/densities-10/figure/densities-10.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/densities-11/figure/densities-11.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/densities-12/figure/densities-12.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/densities-13/figure/densities-13.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/densities-14/figure/densities-14.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/densities-15/figure/densities-15.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/densities-16/figure/densities-16.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/densities-17/figure/densities-17.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/densities-18/figure/densities-18.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/densities-19/figure/densities-19.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/densities-20/densities-20.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/densities-21-2/densities-21-2.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/densities-21-3/densities-21-3.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/densities-21-4/densities-21-4.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/densities-21/densities-21.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/deprecated/growth-rates-02/figure/growth-rates-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/deprecated/second-order-equivalence-01/caption/second-order-\
+equivalence-01-caption.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/deprecated/second-order-equivalence-01/figure/second-order-\
+equivalence-01-wrong.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/domany-kinzel-01/figure/domany-kinzel-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/eca-01/figure/eca-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/eca-02/eca-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/eca-03/eca-03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/ecam-01/ecam-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/emulation-01/caption/emulation-01-caption.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/emulation-01/figure/emulation-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/emulation-02/caption/emulation-02-caption.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/emulation-02/figure/emulation-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/emulation-03/figure/emulation-03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/emulation-04/figure/emulation-04.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/equivalences-01/equivalences-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/figure-errata.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/growth-rates-01/figure/growth-rates-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/growth-rates-01/figure/growth-rates-01-v1.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/growth-rates-02/figure/growth-rates-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/hamming-distance-01/caption/hamming-distance-01-caption.nb\"\
+\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-build-new/\
+figures/hamming-distance-01/figure/hamming-distance-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/lattices-01/caption/lattices-01-caption.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/lattices-01/figure/lattices-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/light-cones-01/figure/light-cones-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/lyapunov-exponents-01/caption/lyapunov-exponents-01-caption.\
+nb\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-build-new/\
+figures/lyapunov-exponents-01/figure/lyapunov-exponents-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/lyapunov-exponents-02/figure/lyapunov-exponents-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/lyapunov-exponents-03/caption/lyapunov-exponents-03.nb\"\>",
+    ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/lyapunov-exponents-03/figure/lyapunov-exponents-03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/lyapunov-exponents-04/figure/lyapunov-exponents-04.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/lyapunov-exponents-05/figure/lyapunov-exponents-05.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/lyapunov-exponents-06/figure/lyapunov-exponents-06.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/lyapunov-exponents-07/figure/lyapunov-exponents-07.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/lyapunov-exponents-08/lyapunov-exponents-08.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/lyapunov-exponents-09/lyapunov-exponents-09.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/lyapunov-exponents-10/lyapunov-exponents-10.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/lyapunov-exponents-11/lyapunov-exponents-11.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/lyapunov-exponents-12/lyapunov-exponents-12.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/lyapunov-exponents-13/lyapunov-exponents-13.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/lyapunov-exponents-14/lyapunov-exponents-14.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/lyapunov-exponents-15/lyapunov-exponents-15.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/second-order-equivalence-01/caption/second-order-\
+equivalence-01-caption.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/second-order-equivalence-01/figure/second-order-equivalence-\
+01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/spatial-correlations-01/figure/spatial-correlations-01.nb\"\
+\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-build-new/\
+figures/spatial-correlations-02/figure/spatial-correlations-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/spatial-correlations-03/figure/spatial-correlations-03.nb\"\
+\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-build-new/\
+figures/spatial-correlations-04/figure/spatial-correlations-04.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-\
+build-new/figures/spatial-correlations-05/figure/spatial-correlations-05.nb\"\
+\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/final-build-new/\
+figures/spatial-correlations-06/figure/spatial-correlations-06.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/builds/pointform-\
+to-paragraphs.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/all-eca/\
+caption/all-eca-caption.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/all-eca/\
+figure/all-eca.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/all-ecam-\
+02/all-ecam-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/all-ecam-\
+03/all-ecam-03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/all-ecam-\
+04/all-ecam-04.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/all-ecam-\
+1/caption/all-ecam-1-caption.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/all-ecam-\
+1/figure/all-ecam-1.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/all-ecam-\
+1-random/caption/all-ecam-1-random-caption.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/all-ecam-\
+1-random/figure/all-ecam-1-random.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/all-ecam-\
+2/all-ecam-2.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/all-ecam-\
+2-random/all-ecam-2-random.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/all-ecam/\
+all-ecam.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/all-ecam-\
+T-block-density/figure/all-ecam-T-block-density.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/all-ecam-\
+T-block-density-random/figure/all-ecam-T-block-density-random.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/all-ecam-\
+T/figure/all-ecam-T.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/all-ecam-\
+T-random/figure/all-ecam-T-random.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/all-eca-\
+random/caption/all-eca-random-caption.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/all-eca-\
+random/figure/all-eca-random.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/block-\
+representation-01/figure/block-representation-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/block-\
+representation-02/figure/block-representation-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/coarse-\
+graining-01/figure/coarse-graining-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+correlations-01/figure/correlations-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+correlations-02/correlations-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+correlations-03/correlations-03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+correlations-04-2/correlations-04-2.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+correlations-04-3/correlations-04-3.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+correlations-04-4/correlations-04-4.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+correlations-04/correlations-04.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+correlations-05/correlations-05.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+correlations-06-2/correlations-06-2.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+correlations-06-3/correlations-06-3.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+correlations-06-4/correlations-06-4.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+correlations-06/correlations-06.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+correlations-07/correlations-07.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+correlations-07/T-independent-rules.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+correlations-08/correlations-08.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+correlations-09/correlations-09.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+correlations-10-2/correlations-10-2.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+correlations-10-3/correlations-10-3.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+correlations-10-4/correlations-10-4.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+correlations-10/correlations-10.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+correlations-11/correlations-11.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+densities-01/figure/densities-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+densities-02/figure/densities-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+densities-03/figure/densities-03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+densities-04/figure/densities-04.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+densities-05/figure/densities-05.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+densities-06/figure/densities-06.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+densities-07/figure/densities-07.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+densities-08/figure/densities-08.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+densities-09/figure/densities-09.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+densities-10/figure/densities-10.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+densities-11/figure/densities-11.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+densities-12/figure/densities-12.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+densities-13/figure/densities-13.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+densities-14/figure/densities-14.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+densities-15/figure/densities-15.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+densities-16/figure/densities-16.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+densities-17/figure/densities-17.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+densities-18/figure/densities-18.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+densities-19/figure/densities-19.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+densities-20/densities-20.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+densities-21-2/densities-21-2.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+densities-21-3/densities-21-3.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+densities-21-4/densities-21-4.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+densities-21/densities-21.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+deprecated/growth-rates-02/figure/growth-rates-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+deprecated/second-order-equivalence-01/caption/second-order-equivalence-01-\
+caption.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+deprecated/second-order-equivalence-01/figure/second-order-equivalence-01-\
+wrong.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/domany-\
+kinzel-01/figure/domany-kinzel-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/eca-01/\
+figure/eca-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/eca-02/\
+eca-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/eca-03/\
+eca-03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/ecam-01/\
+ecam-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+emulation-01/caption/emulation-01-caption.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+emulation-01/figure/emulation-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+emulation-02/caption/emulation-02-caption.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+emulation-02/figure/emulation-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+emulation-03/figure/emulation-03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+emulation-04/figure/emulation-04.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/\
+equivalences-01/equivalences-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/figure-\
+errata.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/growth-\
+rates-01/figure/growth-rates-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/growth-\
+rates-01/figure/growth-rates-01-v1.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/growth-\
+rates-02/figure/growth-rates-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/hamming-\
+distance-01/caption/hamming-distance-01-caption.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/hamming-\
+distance-01/figure/hamming-distance-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/lattices-\
+01/caption/lattices-01-caption.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/lattices-\
+01/figure/lattices-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/light-\
+cones-01/figure/light-cones-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/lyapunov-\
+exponents-01/caption/lyapunov-exponents-01-caption.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/lyapunov-\
+exponents-01/figure/lyapunov-exponents-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/lyapunov-\
+exponents-02/figure/lyapunov-exponents-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/lyapunov-\
+exponents-03/caption/lyapunov-exponents-03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/lyapunov-\
+exponents-03/figure/lyapunov-exponents-03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/lyapunov-\
+exponents-04/figure/lyapunov-exponents-04.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/lyapunov-\
+exponents-05/figure/lyapunov-exponents-05.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/lyapunov-\
+exponents-06/figure/lyapunov-exponents-06.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/lyapunov-\
+exponents-07/figure/lyapunov-exponents-07.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/lyapunov-\
+exponents-08/lyapunov-exponents-08.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/lyapunov-\
+exponents-09/lyapunov-exponents-09.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/lyapunov-\
+exponents-10/lyapunov-exponents-10.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/lyapunov-\
+exponents-11/lyapunov-exponents-11.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/lyapunov-\
+exponents-12/lyapunov-exponents-12.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/lyapunov-\
+exponents-13/lyapunov-exponents-13.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/lyapunov-\
+exponents-14/lyapunov-exponents-14.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/lyapunov-\
+exponents-15/lyapunov-exponents-15.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/second-\
+order-equivalence-01/caption/second-order-equivalence-01-caption.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/second-\
+order-equivalence-01/figure/second-order-equivalence-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/spatial-\
+correlations-01/figure/spatial-correlations-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/spatial-\
+correlations-02/figure/spatial-correlations-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/spatial-\
+correlations-03/figure/spatial-correlations-03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/spatial-\
+correlations-04/figure/spatial-correlations-04.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/spatial-\
+correlations-05/figure/spatial-correlations-05.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/figures/spatial-\
+correlations-06/figure/spatial-correlations-06.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/literature-\
+summaries/Braga1995/Braga1995.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/literature-\
+summaries/Domany1984/Domany1984.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/literature-\
+summaries/Gillespie2001/Gillespie2001.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/literature-\
+summaries/Goldenfeld2004/Goldenfeld2004.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/literature-\
+summaries/Grassberger1978/Grassberger1978.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/literature-\
+summaries/Grassberger1984/Grassberger1984.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/literature-\
+summaries/Grassberger1986/Grassberger1986.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/literature-\
+summaries/Willson1981/Willson1981.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/literature-\
+summaries/Wilson1984/Wilson1984.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/literature-\
+summaries/Zabolitzky1988/Zabolitzky1988.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/literature-\
+summaries/Zabolitzky1990/Zabolitzky1990.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/misc/Outline-01.\
+nb\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/old/sections.old/Outline-\
+01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/presentations/\
+090706/materials-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/presentations/\
+090706/presentation-090706.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/presentations/\
+122105/conclusions/conclusions.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/presentations/\
+122105/hamming-distance-def/hamming-distance-def.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/presentations/\
+122105/hamming-distance-linear/hamming-distance-linear.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/presentations/\
+122105/literature-01/literature-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/presentations/\
+122105/literature-02/literature-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/presentations/\
+122105/literature-03/literature-03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/presentations/\
+122105/lyapunov-exp-def/lyapunov-exp-def.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/presentations/\
+122105/mean-field-01/mean-field-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/presentations/\
+122105/mean-field-02/mean-field-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/presentations/\
+122105/mean-field-03/mean-field-03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/presentations/\
+122105/merry-christmas/merry-christmas.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/presentations/\
+122105/outline-01/outline-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/presentations/\
+122105/outline-02/outline-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/presentations/\
+122105/outline-03/outline-03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/presentations/\
+122105/outline-04/outline-04.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/presentations/\
+122105/outline-05/outline-05.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/presentations/\
+122105/outline-06/outline-06.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/presentations/\
+122105/outline-07/outline-07.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/presentations/\
+122105/presentation.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/presentations/\
+122105/spatial-correlation-def/spatial-correlation-def.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/masters-thesis/presentations/\
+122105/title/title.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/minutes/Christian-102704.nb\"\>\
+", ",", "\<\"/Users/pauljean/Dropbox/nks/grad/minutes/Pauli-Ramo-041906/Pauli-\
+Ramo-041906.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/minutes/Peter-121605.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/minutes/Peter-122304.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/minutes/peter-grassberger-\
+110606.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/minutes/Peter-remote-062306.nb\"\
+\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/grad/nserc/pgsD-app/contributions.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/nserc/pgsD-app/masters-thesis-\
+summary.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/grad/nserc/pgsD-app/research-\
+proposal.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/lit/2004/Phillips2004.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/lit/2005/Szudzik2005.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/literature-summaries/Boccara1991/\
+Boccara1991.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/literature-summaries/Griffeath1979/\
+Griffeath1979.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/literature-summaries/Jen1990/Jen1990.\
+nb\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/literature-summaries/Yi2006/Yi2006.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/misc/072407-monoliths-phase-\
+boundaries.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/misc/073107-monoliths-phase-\
+boundaries.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/misc/080707-control-boundaries.nb\"\>\
+", ",", "\<\"/Users/pauljean/Dropbox/nks/misc/082107-Monoliths-in-rule-90.nb\"\
+\>", ",", "\<\"/Users/pauljean/Dropbox/nks/misc/Alpha22Examples.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/misc/brenton-3np1-102508.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/misc/DiggData.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/misc/ECAM-60-1-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/misc/max-run-length.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/misc/nksAndPhysics-ot-nks-ss05.nb\"\>\
+", ",", "\<\"/Users/pauljean/Dropbox/nks/misc/nks-wolframalpha.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/misc/PID-howard.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/misc/recursive-map.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/misc/rule-146-schema.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/misc/rule-30-randomness.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/misc/sw-012507.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/misc/TalkFinal2.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/misc/TechConf2005_IDETalk.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/misc/TommasoTrinets.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/packages/Batch/Batch.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/packages/Batch/Batch-test-01.nb\"\>",
+    ",", "\<\"/Users/pauljean/Dropbox/nks/packages/blank-package.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/packages/CATorus/CATorus.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/packages/CausalTree/CausalTree.nb\"\>\
+", ",", "\<\"/Users/pauljean/Dropbox/nks/packages/CausalTree/CausalTree-Tests.\
+nb\"\>", ",", "\<\"/Users/pauljean/Dropbox/nks/packages/Data/Data.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/packages/InDevelopment/Searches-\
+development.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/packages/InDevelopment/Stats.nb\"\>",
+    ",", "\<\"/Users/pauljean/Dropbox/nks/packages/Monoliths/monolith-\
+functions.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/packages/PackageSummary.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/packages/Presentation/init.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/packages/Presentation/\
+PresentationPlots.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/packages/Searches/Searches.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/packages/ShiftedCA/ShiftedCA.nb\"\>",
+    ",", "\<\"/Users/pauljean/Dropbox/nks/packages/Test/directories.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/packages/Test/TestPackage.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/packages/TimeShift/HexArray-Tests.nb\
+\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/packages/TimeShift/TestSuperpose.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/packages/TimeShift/TimeShift.nb\"\>",
+    ",", "\<\"/Users/pauljean/Dropbox/nks/packages/TimeShift/TimeShift-Tests.\
+nb\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/packages/Utilities/CAUtilities.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/packages/Utilities/Enumeration.nb\"\>\
+", ",", "\<\"/Users/pauljean/Dropbox/nks/packages/Utilities/Initials.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/packages/Utilities/MyGraphics.nb\"\>\
+", ",", "\<\"/Users/pauljean/Dropbox/nks/packages/Utilities/Plots.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/joual-2009/build/figures/\
+adjacent-init-90-146/adjacent-init-90-146.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/joual-2009/build/figures/\
+class-3-rules/class-3-rules.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/joual-2009/build/figures/\
+class-4-rules/class-4-rules.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/joual-2009/build/figures/\
+difference-table-90-146/difference-table-90-146.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/joual-2009/build/figures/eca/\
+eca.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/joual-2009/build/figures/even-\
+run-init-90-146/even-run-init-90-146.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/joual-2009/build/figures/\
+lattice-parities/lattice-parities.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/joual-2009/build/figures/many-\
+structures/many-structures.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/joual-2009/build/figures/odd-\
+run-init-90-146/odd-run-init-90-146.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/joual-2009/build/figures/\
+persistent-structures-2/persistent-structures-2.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/joual-2009/build/figures/\
+persistent-structures/persistent-structures.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/joual-2009/build/figures/rule-\
+146-90-perturbation/rule-146-90-perturbations.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/joual-2009/build/figures/rule-\
+146-90-perturbations/rule-146-90-perturbations.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/joual-2009/build/figures/rule-\
+146-boundary-density/rule-146-boundary-density.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/joual-2009/build/figures/rule-\
+146-boundary-diffusion/rule-146-boundary-diffusion.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/joual-2009/build/figures/rule-\
+146-even-odd-distribution/rule-146-even-odd-distribution.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/joual-2009/build/figures/rule-\
+146-large-scale/rule-146-large-scale.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/joual-2009/build/figures/rule-\
+146-perturbations/rule-146-perturbations.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/joual-2009/build/figures/rule-\
+146-phases/rule-146-phases.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/joual-2009/build/figures/rule-\
+146-random/rule-146-random.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/joual-2009/build/figures/rule-\
+146-simple-random/rule-146-simple-random.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/joual-2009/build/figures/rule-\
+30-rule-table/rule-30-rule-table.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/joual-2009/build/figures/rule-\
+30-simple-random/rule-30-simple-random.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/joual-2009/build/figures/rule-\
+90-146-simple-random/rule-90-146-simple-random.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/joual-2009/build/figures/rule-\
+90-random/rule-90-random.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/joual-2009/build/figures/rule-\
+90-rule-60/rule-90-rule-60.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/joual-2009/build/figures/rule-\
+tables-90-146/rule-tables-90-146.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/joual-2009/build/figures/\
+single-cell-init-90-146/single-cell-init-90-146.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/joual-2009/build/figures/\
+single-structure/single-structure.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/joual-2009/build/figures/\
+triangle-size-distribution/triangle-size-distribution.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/joual-2009/mathematica/\
+monolith-functions.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/joual-2009/mathematica/\
+monoliths-111508.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/joual-2009/mathematica/\
+Monoliths-summary-091808.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/joual-2009/mathematica/NKS-\
+Midwest-Letourneau-presentation.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/joual-2009/mathematica/NKS-\
+Midwest-Letourneau-presentation-withcode.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/joual-2009/presentation/JOUAL-\
+2009-paul-jean.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/joual-2009/presentation/JOUAL-\
+2009-presentation.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/joual-2009/presentation/NKS-\
+SS-09-Template.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/joual-2009/presentation/\
+presentation-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/nks-midwest-2008-talk/\
+Monoliths-summary-091808.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/nks-midwest-2008-talk/NKS-\
+Midwest-Letourneau-presentation-extra.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/nks-midwest-2008-talk/NKS-\
+Midwest-Letourneau-presentation.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/nks-midwest-2008-talk/NKS-\
+Midwest-Letourneau-presentation-withcode.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/NKS-midwest-JCS-paper/030310/\
+Figure4-ecaruleicon.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/NKS-midwest-JCS-paper/NKS-\
+midwest-JCS-paper-cover-art.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/NKS-midwest-JCS-paper/NKS-\
+midwest-JCS-paper-figures.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/NKS-midwest-JCS-paper/NKS-\
+midwest-JCS-paper.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/NKS-midwest-JCS-paper/NKS-\
+midwest-JCS-paper-v1.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/rule-146/rule-146.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/rule-146-structures/build/\
+figures/adjacent-init-90-146/adjacent-init-90-146.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/rule-146-structures/build/\
+figures/class-3-rules/class-3-rules.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/rule-146-structures/build/\
+figures/class-4-rules/class-4-rules.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/rule-146-structures/build/\
+figures/difference-table-90-146/difference-table-90-146.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/rule-146-structures/build/\
+figures/even-run-init-90-146/even-run-init-90-146.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/rule-146-structures/build/\
+figures/many-structures/many-structures.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/rule-146-structures/build/\
+figures/odd-run-init-90-146/odd-run-init-90-146.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/rule-146-structures/build/\
+figures/persistent-structures-2/persistent-structures-2.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/rule-146-structures/build/\
+figures/persistent-structures/persistent-structures.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/rule-146-structures/build/\
+figures/rule-146-random/rule-146-random.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/rule-146-structures/build/\
+figures/rule-146-simple-random/rule-146-simple-random.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/rule-146-structures/build/\
+figures/rule-30-rule-table/rule-30-rule-table.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/rule-146-structures/build/\
+figures/rule-90-146-simple-random/rule-90-146-simple-random.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/rule-146-structures/build/\
+figures/rule-90-random/rule-90-random.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/rule-146-structures/build/\
+figures/rule-90-rule-60/rule-90-rule-60.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/rule-146-structures/build/\
+figures/rule-tables-90-146/rule-tables-90-146.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/rule-146-structures/build/\
+figures/single-cell-init-90-146/single-cell-init-90-146.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/rule-146-structures/\
+mathematica/monolith-functions.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/rule-146-structures/\
+mathematica/monoliths-111508.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/rule-146-structures/\
+mathematica/Monoliths-summary-091808.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/rule-146-structures/\
+mathematica/NKS-Midwest-Letourneau-presentation.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/papers/rule-146-structures/\
+mathematica/NKS-Midwest-Letourneau-presentation-withcode.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/practice/011006-messages.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/practice/021806-scoping.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/practice/030706-color-swatches.nb\"\>\
+", ",", "\<\"/Users/pauljean/Dropbox/nks/practice/051706-GraphicsComplex.nb\"\
+\>", ",", "\<\"/Users/pauljean/Dropbox/nks/practice/060207-block-vs-module.nb\
+\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/practice/070207-locator-ArrayPlot.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/practice/070507-regex-lookahead.nb\"\
+\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/practice/070907-ArrayPlot-Locator.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/practice/072806-grid.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/practice/083006-grid.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/practice/ReadList-newlines.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/BlockCA/BlockCA-Prelim-2.nb\
+\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/projects/BlockCA/BlockCA-Prelim-3.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/BlockCA/BlockCA-Prelim-4.nb\
+\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/projects/BlockCA/BlockCA-Prelim-5.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/BlockCA/BlockCA-Prelim.nb\"\
+\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/projects/CATimeShift/CausalTrees-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/CATimeShift/OddOffsets-01.\
+nb\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/projects/CATimeShift/Rule110SeededByECAs-\
+Detail-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/CATimeShift/Rule39-speeds.\
+nb\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/projects/CATimeShift/RuleSurvey-Descriptions.\
+nb\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/projects/CATimeShift/RuleSurvey.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/CATimeShift/TimeShift-01-\
+notes.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/CATimeShift/TimeShift-\
+Generalize.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/CATorus/CAGeneralOp.nb\"\>",
+    ",", "\<\"/Users/pauljean/Dropbox/nks/projects/CATorus/CaGenOp_prelim.nb\"\
+\>", ",", "\<\"/Users/pauljean/Dropbox/nks/projects/CATorus/CATorus.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/CATorus/CATorus_prelim.nb\"\
+\>", ",", "\<\"/Users/pauljean/Dropbox/nks/projects/CATorus/CATorus-Test01.nb\
+\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/projects/CATorus/dynamictest.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/CATorus/Notes-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/CATorus/optimize-01.nb\"\>",
+    ",", "\<\"/Users/pauljean/Dropbox/nks/projects/CATorus/optimize-03.nb\"\>\
+", ",", "\<\"/Users/pauljean/Dropbox/nks/projects/CATorus/projects.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/CATorus/simpleCA.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/CATorus/SumTori.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/CATorus/ToddTorus.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/CATorus/todo.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/CATorus/Torus.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/CATorus/TorusReverse.nb\"\>\
+", ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Education/MayaDemo-02.nb\"\>\
+", ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Education/tomikoDemo.nb\"\>\
+", ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Extract/Extract-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Extract/test-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Extract/test-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Extract/test-03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Fluctuation/CA/\
+CellularAutomaton.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Fluctuation/CTSs/CTS-ToDo.\
+nb\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/projects/Fluctuation/CTSs/CyclicTagSystems.\
+nb\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/projects/Fluctuation/NumericalSystems/\
+CosineSums.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Fluctuation/\
+NumericalSystems/RecursiveFunctions-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Fluctuation/\
+NumericalSystems/RecursiveFunctions-03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Fluctuation/\
+NumericalSystems/RecursiveFunctions-04.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Fluctuation/\
+NumericalSystems/RecursiveFunctions-05.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Fluctuation/\
+NumericalSystems/RecursiveFunctions.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Fluctuation/\
+NumericalSystems/x-1overx.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Fluctuation/research/Ideas.\
+nb\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/projects/Fluctuation/research/research.nb\"\>\
+", ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Fluctuation/TMs/\
+TuringMachines.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Fluctuation/TMs/\
+TuringMachines-notes.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Ideas/3-body.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Ideas/boolean-fcns.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Ideas/Entropy-110.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Ideas/Ideas.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Ideas/nonlocal-MCA.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/KochenSpecker/research.nb\"\
+\>", ",", "\<\"/Users/pauljean/Dropbox/nks/projects/launch-notebooks.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Misc/blocktrans.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Misc/costrained-random-\
+walks-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Misc/costrained-random-\
+walks.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/MiscDiscoveries/toc.nb\"\>",
+    ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Misc/out-of-phase-\
+autocorrelation.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Misc/searches.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Monoliths/010608-Monoliths-\
+in-rule-60.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Monoliths/010608-Monoliths-\
+in-rule-90.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Monoliths/060408-Monoliths-\
+in-rule-90.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Monoliths/062008-Monoliths-\
+in-rule-90.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Monoliths/062208-Monoliths-\
+in-rule-90.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Monoliths/073107-monoliths-\
+phase-boundaries.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Monoliths/080707-control-\
+boundaries.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Monoliths/082107-Monoliths-\
+in-rule-90.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Monoliths/082208-Monoliths-\
+in-rule-90.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Monoliths/082308-Monoliths-\
+in-rule-90.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Monoliths/090708-Monoliths-\
+phase-boundaries-rule146-rule90.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Monoliths/090708-Monoliths-\
+rule146-rule90.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Monoliths/Monoliths-092808.\
+nb\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/projects/Monoliths/Monoliths-100408.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Monoliths/Monoliths-1011008.\
+nb\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/projects/Monoliths/Monoliths-101708.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Monoliths/Monoliths-101908.\
+nb\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/projects/Monoliths/Monoliths-brenton-102508.\
+nb\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/projects/Monoliths/Monoliths-literature-\
+092008.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Monoliths/Monoliths-\
+manipulate-position-110108.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Monoliths/Monoliths-\
+repeatingphasesinit-092008.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Monoliths/Rule146-Monoliths-\
+03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Monoliths/Rule146-Monoliths-\
+04-lifetimes.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Monoliths/Rule146-Monoliths-\
+05-lifetimes.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Monoliths/Rule146-Monoliths-\
+06-MonolithFA.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Monoliths/Rule146-Monoliths-\
+07-mean-field-density.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Monoliths/Rule146-Monoliths-\
+08-pre-images.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Monoliths/Rule146-Monoliths-\
+090708.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Monoliths/Rule146-Monoliths-\
+09-width-dependence.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Monoliths/Rule146-Monoliths-\
+101708.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Monoliths/Rule146-Monoliths-\
+10-coupled-rule-90s.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Monoliths/Rule146-Monoliths-\
+11-width-dependence.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Monoliths/Rule146-Monoliths-\
+12-correlations.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Monoliths/Rule146-Monoliths-\
+13-90-to-60-phases.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Monoliths/Rule146-Monoliths-\
+14-periodic.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Monoliths/Rule146-Monoliths-\
+15-long-evol.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Monoliths/Rule146-Monoliths-\
+16-pairs.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Monoliths/Rule146-Monoliths-\
+17-phase-boundaries.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Monoliths/Rule146-Monoliths-\
+18-single-phase-boundary.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/Monoliths/Search-03.nb\"\>",
+    ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ProteinFolding/OilAndWater.\
+nb\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/projects/ProteinFolding/research.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/SAW/saw-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/050306-ECAM-2-\
+random-bdr/ECAM-2-random-bdr.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/082605-survey/CA-\
+memory.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/all-timesteps/all-\
+timesteps.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-block-\
+representation/ECAM-block-representation-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-block-\
+representation/ECAM-block-representation-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-block-\
+representation/ECAM-block-representation-03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-block-\
+representation/ECAM-block-representation-04.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-coarse-\
+graining/ECAM-coarse-graining-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-coarse-\
+graining/ECAM-coarse-graining-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-coarse-\
+graining/ECAM-coarse-graining-03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-coarse-\
+graining/ECAM-coarse-graining-04.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-coarse-\
+graining/ECAM-coarse-graining-05.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-coarse-\
+graining/ECAM-coarse-graining-06.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-coarse-\
+graining/ECAM-coarse-graining-07.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-coarse-\
+graining/ECAM-coarse-graining-08.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-coarse-\
+graining/ECAM-coarse-graining-09.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-coarse-\
+graining/ECAM-coarse-graining-10.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-coarse-\
+graining/ECAM-coarse-graining-11.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-coarse-\
+graining/ECAM-coarse-graining-12.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-coarse-\
+graining/ECAM-coarse-graining-13.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-coarse-\
+graining/ECAM-coarse-graining-14.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-coarse-\
+graining/ECAM-coarse-graining-15.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-correlations/\
+CA-Local-Correlations-V6.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-correlations/\
+ECAM-correlations-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-correlations/\
+ECAM-correlations-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-correlations/\
+ECAM-correlations-03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-correlations/\
+ECAM-correlations-04.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-correlations/\
+ECAM-correlations-05.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-correlations/\
+ECAM-correlations-06.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-correlations/\
+ECAM-correlations-07.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-correlations/\
+ECAM-correlations-08.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-correlations/\
+ECAM-correlations-09.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-correlations/\
+ECAM-correlations-10.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-correlations/\
+ECAM-correlations-11.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-correlations/\
+ECAM-correlations-12.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-correlations/\
+ECAM-correlations-13.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-correlations/\
+ECAM-correlations-14.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-correlations/\
+ECAM-correlations-15.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-correlations/\
+ECAM-correlations-16.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-correlations/\
+ECAM-correlations-18.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-correlations/\
+ECAM-correlations-19.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-correlations/\
+ECAM-correlations-20.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-correlations/\
+ECAM-correlations-21.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-correlations/\
+ECAM-correlations-22.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-correlations/\
+ECAM-correlations-23.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-correlations/\
+ECAM-correlations-24.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-correlations/\
+ECAM-correlations-25.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-correlations/\
+ECAM-correlations-26.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-correlations/\
+ECAM-correlations-27.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-correlations/\
+ECAM-correlations-28.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-correlations/\
+ECAM-correlations-29.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-correlations/\
+ECAM-correlations-30.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-correlations/\
+meeting-peter-032406-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-correlations/\
+meeting-peter-032406-03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-correlations/\
+meeting-peter-032406.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-correlations/\
+meeting-peter-051506.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-densities/\
+ECAM-densities-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-densities/\
+ECAM-densities-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-densities/\
+ECAM-densities-03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-densities/\
+ECAM-densities-04.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-densities/\
+ECAM-densities-05.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-densities/\
+ECAM-densities-06.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-densities/\
+ECAM-densities-07.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-densities/\
+ECAM-densities-08.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-densities/\
+ECAM-densities-09.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-densities/\
+ECAM-densities-11.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-densities/\
+ECAM-densities-12.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-densities/\
+ECAM-densities-13.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-densities/\
+ECAM-densities-14.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-densities/\
+ECAM-densities-15.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-densities/\
+ECAM-densities-16.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-densities/\
+ECAM-densities-17.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-densities/\
+ECAM-densities-18.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-densities/\
+ECAM-densities-19.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-densities/\
+ECAM-densities-20.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-densities/\
+ECAM-densities-21.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-difference-\
+patterns/ECAM-difference-patterns-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-difference-\
+patterns/ECAM-difference-patterns-03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-difference-\
+patterns/ECAM-difference-patterns-04.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-difference-\
+patterns/ECAM-difference-patterns-05.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-difference-\
+patterns/ECAM-difference-patterns-06.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-difference-\
+patterns/ECAM-difference-patterns-07.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-difference-\
+patterns/ECAM-difference-patterns-09.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-difference-\
+patterns/ECAM-difference-patterns-10.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-difference-\
+patterns/ECAM-difference-patterns-11.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-difference-\
+patterns/ECAM-difference-patterns-12.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-difference-\
+patterns/ECAM-difference-patterns-13.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-difference-\
+patterns/ECAM-difference-patterns-14.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-difference-\
+patterns/ECAM-difference-patterns-15.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-difference-\
+patterns/ECAM-difference-patterns-16.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-difference-\
+patterns/ECAM-difference-patterns.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-difference-\
+patterns/ECAM-hamming-distance.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-DK-\
+equivalence/DomanyKinzelStochasticCA5.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-DK-\
+equivalence/ECAM-DK-equivalence.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-emulation/\
+ECAM-emulation-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-emulation/\
+ECAM-emulation-03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-emulation/\
+ECAM-emulation-04.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-emulation/\
+ECAM-emulation-05.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-emulation/\
+ECAM-emulation-06.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-emulation/\
+ECAM-emulation.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-enumerated-\
+initials/ECAM-enumerated-initials.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-growth-rates/\
+ECAM-growth-rates-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-growth-rates/\
+ECAM-growth-rates-03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-growth-rates/\
+ECAM-growth-rates-04.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-growth-rates/\
+ECAM-growth-rates-06.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-growth-rates/\
+ECAM-growth-rates-07.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-growth-rates/\
+ECAM-growth-rates-08.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-growth-rates/\
+ECAM-growth-rates-09.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-growth-rates/\
+ECAM-growth-rates-10.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-growth-rates/\
+ECAM-growth-rates-11.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-growth-rates/\
+ECAM-growth-rates-12.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-growth-rates/\
+ECAM-growth-rates.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-mappings/\
+ECAM-mappings.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-second-order-\
+equivalence/reversible-correction.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-specific-\
+rules/106-ECAM-T/106-ECAM-0.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-specific-\
+rules/110-ECAM-1/110-ECAM-1-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-specific-\
+rules/110-ECAM-1/110-ECAM-1-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-specific-\
+rules/110-ECAM-2/110-ECAM-2-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-specific-\
+rules/150-ECAM-2/150-ECAM-2-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-specific-\
+rules/150-ECAM-2/150-ECAM-2-03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-specific-\
+rules/150-ECAM-2/150-ECAM-2.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-specific-\
+rules/178-ECAM-T/178-ECAM-T-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-specific-\
+rules/1-ECAM-T/1-ECAM-T-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-specific-\
+rules/41-ECAM-100/41-ECAM-100-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-specific-\
+rules/41-ECAM-2/41-ECAM-2-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-specific-\
+rules/41-ECAM-2/41-ECAM-2.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-specific-\
+rules/41-ECAM-3/41-ECAM-3-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-specific-\
+rules/60-ECAM-0/60-ECAM-0-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-specific-\
+rules/60-ECAM-1/60-ECAM-1-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-specific-\
+rules/6-ECAM-2/6-ECAM-2-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-specific-\
+rules/73-ECAM-T/73-ECAM-T-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-state-probs/\
+ECAM-state-probs.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-state-\
+transitions/ECAM-state-transitions-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ECAM-time-dep-\
+correlations/ECAM-tdc-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/open-problems/\
+open-problems-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/open-problems/\
+open-problems-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/open-problems/\
+open-problems-03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/open-problems/\
+open-problems-04.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/open-problems/\
+open-problems-05.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/open-problems/\
+open-problems-06.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/other/061406-ecam-\
+light-cones.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/other/bbgky-wrong.\
+nb\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/other/CA2-CA1-equivalence.\
+nb\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/other/ca-diffusion.nb\"\>\
+", ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/other/\
+CellularAutomaton-for-ECAMs.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/other/\
+DomanyKinzelStochasticCA5.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/other/ECAM-\
+diffusion.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/other/\
+ECAMRuleIcon.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/other/ECAM-run-\
+times.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/other/Encoding-01-\
+notes.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/other/Encoding-02.\
+nb\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/other/Equivalence-02.nb\"\
+\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/other/Equivalence.nb\"\>",
+    ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/other/\
+k3r2Rule2144.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/other/Large-pt.nb\
+\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/other/Large-pt-notes.nb\"\
+\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/other/MandelbrotSet.nb\"\>\
+", ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/other/mandel.nb\"\
+\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/other/num-refs.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/other/peintgen-\
+map.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/other/phase-\
+transitions-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/other/random-bit.\
+nb\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/other/RuleSurvey-01.nb\"\>\
+", ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/other/ShiftedCA-\
+compressed.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/other/ShiftedCA-\
+general-function.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/other/\
+smoluchowski-correlations.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/other/T-\
+independent-rules.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/repetitive-\
+initials/repetitive-initials-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/repetitive-\
+initials/repetitive-initials.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ShiftedCA-\
+compressed/ShiftedCA-compressed-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ShiftedCA-\
+compressed/ShiftedCA-compressed-03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ShiftedCA-\
+compressed/ShiftedCA-compressed-04.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/ShiftedCA-\
+compressed/ShiftedCA-compressed-05.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/spatial-\
+correlation/spatial-correlation-00.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/spatial-\
+correlation/spatial-correlation-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/spatial-\
+correlation/spatial-correlation-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/spatial-\
+correlation/spatial-correlation-03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/spatial-\
+correlation/spatial-correlation-04.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/spatial-\
+correlation/spatial-correlation-05.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/ShiftedCA/spatial-\
+correlation/spatial-correlation-06.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/SSProject/ProjectNotes.nb\"\
+\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/projects/SSProject/ProjectProposal.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/to-do/boolean-nets-01.nb\"\>\
+", ",", "\<\"/Users/pauljean/Dropbox/nks/projects/to-do/ECAM-probabilistic-\
+equivalence.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/projects/to-do/rosvall-notes.nb\"\>",
+    ",", "\<\"/Users/pauljean/Dropbox/nks/projects/to-do/to-do-051706.nb\"\>",
+    ",", "\<\"/Users/pauljean/Dropbox/nks/projects/to-do/to-do.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/ruleshack/meetup-notes-013011.nb\"\>\
+", ",", "\<\"/Users/pauljean/Dropbox/nks/ruleshack/notes-sun-121711.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/ruleshack/notes-sunday-021311.nb\"\>\
+", ",", "\<\"/Users/pauljean/Dropbox/nks/ruleshack/notes-sunday-022711.nb\"\>\
+", ",", "\<\"/Users/pauljean/Dropbox/nks/ruleshack/ruleshack-notes-110611.nb\"\
+\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/scrap/create-figure-notebook.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/scrap/create-function-notebook.nb\"\>\
+", ",", "\<\"/Users/pauljean/Dropbox/nks/scrap/create-lit-summary-notebook.nb\
+\"\>", ",", "\<\"/Users/pauljean/Dropbox/nks/scrap/create-project-notebook.nb\
+\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/scrap/project-notebook-database.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/scrap/toc.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/collatz.nb\"\>",
+    ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/HW/at-SS/\
+culling-ca-space.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/HW/at-SS/HW-01.\
+nb\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/HW/at-SS/HW-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/HW/at-SS/HW-03.\
+nb\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/HW/at-SS/HW-04.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/HW/at-SS/HW-05.\
+nb\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/HW/at-SS/HW-06.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/HW/at-SS/HW-07.\
+nb\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/HW/at-SS/HW-08.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/HW/at-SS/HW-09.\
+nb\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/HW/at-SS/HW-10.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/HW/at-SS/HW-11.\
+nb\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/HW/pre-SS/10/practice2-\
+prob10.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/HW/pre-SS/1/\
+practice2-prob1.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/HW/pre-SS/2/\
+practice2-prob2-interestingk3r1totcas.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/HW/pre-SS/2/\
+practice2-prob2-k3r1rl1329.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/HW/pre-SS/2/\
+practice2-prob2-k3r1rl1410.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/HW/pre-SS/2/\
+practice2-prob2-k3r1rl151.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/HW/pre-SS/2/\
+practice2-prob2-k3r1rl590.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/HW/pre-SS/2/\
+practice2-prob2-k3r1-rules-with-walls.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/HW/pre-SS/2/\
+practice2-prob2.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/HW/pre-SS/3/\
+practice2-prob3.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/HW/pre-SS/4/\
+practice2-prob4.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/HW/pre-SS/5/\
+practice2-prob5.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/HW/pre-SS/6/\
+practice2-prob6.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/HW/pre-SS/7/\
+practice2-prob7.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/HW/pre-SS/8/\
+practice2-prob8.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/HW/pre-SS/9/\
+practice2-prob9.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/HW/pre-SS/nks-\
+ss05-m-practice-edited.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/HW/pre-SS/nks-\
+ss05-m-practice.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/HW/pre-SS/\
+practice1answers.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/HW/pre-SS/\
+practice2-edited.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/HW/pre-SS/\
+practice2hints.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/HW/pre-SS/\
+practice2.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/lectures/ep/\
+062205-nks-applications-mynotes.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/lectures/ep/\
+Homework2005.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/lectures/kb/\
+062205-basic-nks-mynotes.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/lectures/kb/\
+062205-WhatIsNKS.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/lectures/ms/\
+062405-enumeration.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/lectures/ot/\
+062405-ot-physics.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/lectures/pjl/\
+pjl-lecture-062205.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/lectures/pjl/\
+pjl-lecture-062205-notes-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/lectures/pjl/\
+pjl-lecture-062205-notes-03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/lectures/pjl/\
+pjl-lecture-062205-notes.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/lectures/sc/\
+HowtoWriteEfficientMathematicaCode.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/lectures/sw/\
+062005-sw-ideas.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/lectures/sw/\
+live-expt-jellyfish-mynotes.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/lectures/sw/\
+misc-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/misc/062905-\
+tables-petra.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/misc/063005-\
+sparse-arrays-hugo.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/misc/\
+ApplicationEssay.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/misc/nks-\
+explorer-trick.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/misc/notes.nb\"\
+\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/misc/quotable-quotes.nb\
+\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/monoliths-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/NKS-SS-05-\
+Template.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/Poster-\
+Presentation-Template.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/post-ss-\
+projects.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/project/062405-\
+ot-meeting.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/project/062405-\
+tr-meeting.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/project/062805-\
+ot-meeting.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/project/063005-\
+ot-meeting.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/project/070505-\
+tr-meeting.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/project/essay.\
+nb\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/project/poster-\
+presentation.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/project/\
+presentation-fits-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/project/\
+presentation-fits-03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/project/\
+presentation-fits-04.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/project/\
+presentation-fits.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/project/\
+presentation-materials.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/project/\
+presentation.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/project/project-\
+01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/project/project-\
+02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/project/project-\
+03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/project/project-\
+04.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/project/project-\
+05.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/project/project-\
+06.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/project/project-\
+07.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/project/project-\
+08.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/project/project-\
+09.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/project/project-\
+10.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/project/project-\
+11.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/project/project-\
+12.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/project/project-\
+13.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/project/project-\
+14.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/project/project-\
+15.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/project/project-\
+16.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/project/project-\
+proposal.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/project-\
+proposal.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/project/\
+research-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/project/sw-\
+meeting/cbDNA-summary.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/project/sw-\
+meeting/Polymer-08.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/project/sw-\
+meeting/Polymer-09.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/project/sw-\
+meeting/Preliminary-Fluctuation-020805.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/project/sw-\
+meeting/sw-meeting-062305.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2005/zeta.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/figures/\
+enumeration-01/enumeration-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/figures/in-\
+degree-01/in-degree-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/figures/\
+inhomogeneous-cyclic-01/inhomogeneous-cyclic-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/figures/\
+inhomogeneous-cyclic-02/inhomogeneous-cyclic-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/figures/\
+inhomogeneous-cyclic-03/inhomogeneous-cyclic-03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/figures/\
+inhomogeneous-cyclic-04/inhomogeneous-cyclic-04.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/figures/rule-\
+tables-01/rule-tables-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/figures/stg-01/\
+stg-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/figures/stg-02/\
+stg-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/graphplot-\
+options.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/help-logs/3D-\
+branching.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/help-logs/3D-\
+rotations.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/help-logs/3D-\
+walls.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/help-logs/\
+character-codes.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/help-logs/\
+Final3DBranchingLinFF451.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/help-logs/\
+Final3DBranchingLinFFB9D.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/help-logs/Final_\
+Report3.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/help-logs/help-\
+logs.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/help-logs/\
+NKSPlanets.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/help-logs/\
+turing-machines-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/homework/\
+homework-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/homework/\
+homework-01-v5.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/homework/\
+homework-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/homework/\
+homework-02-v5.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/homework/\
+homework-03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/homework/\
+homework-03-rl-490694802.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/homework/\
+homework-04.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/homework/\
+homework-05.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/homework/\
+homework-06.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/homework/\
+homework-07.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/lectures/jason/\
+socialsciencestalk.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/lectures/\
+matthew/CombinatorAnalysis.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/lectures/\
+matthew/EmAndIrrLecture.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/lectures/\
+matthew/emulation-definition.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/lectures/\
+matthew/EnumLecture.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/lectures/\
+matthew/LogicLecture.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/lectures/\
+matthew/SystemsSurvey.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/lectures/\
+matthew/TuringLecture.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/lectures/paul-\
+jean/062106-talk-notes.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/lectures/paul-\
+jean/062506-mathematica-qanda.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/lectures/paul-\
+jean/062606-list-convolve.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/lectures/paul-\
+jean/062706-mathematica-qanda-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/lectures/paul-\
+jean/062706-mathematica-qanda-03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/lectures/paul-\
+jean/062706-mathematica-qanda.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/lectures/\
+stephen/ComplexCrystal.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/lectures/todd/\
+Math-Bio-NoGraphics-06.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/lectures/todd/\
+PCENoGraphics-SS-06.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/lectures/todd/\
+TheCrucialExperiment2.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/literature-\
+summaries/Wang2003.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/poster/\
+NKSSS05Poster.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/poster/poster-\
+materials-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/poster/poster-\
+materials-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/poster/poster.\
+nb\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/poster/Poster-\
+Presentation-Template.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/poster/\
+presentation-materials-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/poster/\
+presentation.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/practice/10/\
+practice2-prob10.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/practice/1/\
+practice2-prob1.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/practice/2/\
+practice2-prob2-interestingk3r1totcas.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/practice/2/\
+practice2-prob2-k3r1rl1329.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/practice/2/\
+practice2-prob2-k3r1rl1410.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/practice/2/\
+practice2-prob2-k3r1rl151.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/practice/2/\
+practice2-prob2-k3r1rl590.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/practice/2/\
+practice2-prob2-k3r1-rules-with-walls.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/practice/2/\
+practice2-prob2.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/practice/3/\
+practice2-prob3.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/practice/4/\
+practice2-prob4.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/practice/5/\
+practice2-prob5.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/practice/6/\
+practice2-prob6.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/practice/7/\
+practice2-prob7.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/practice/8/\
+practice2-prob8.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/practice/9/\
+practice2-prob9.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/practice/\
+practice1-06-edited.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/practice/\
+practice1-06.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/practice/\
+practice2-06.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/project/\
+ForPaulJean.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/project/\
+ForPaulJean-notes.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/project/post-\
+mortem/jasons-suggestions.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/project/project-\
+01-rule-icon.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/project/project-\
+02-rule-equivalents.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/project/project-\
+03-basic-functions.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/project/project-\
+04-state-transition-graphs.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/project/project-\
+05-in-degree.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/project/project-\
+06-inhomogeneous-cyclic.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/project/project-\
+07-inhomogeneous-cyclic.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/project/project-\
+08-graph-graphics.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/project/project-\
+09-inhomogeneous-cyclic-in-degree.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/project/project-\
+10-enumeration.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/project/project-\
+11-enumeration.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/project/project-\
+12-enumeration.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/project/project-\
+13-enumeration.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/project/project-\
+14-recursive-enumeration.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/project/project-\
+15-homogeneous.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/project/project-\
+15-network-evolution.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/project/project-\
+16-homogenous-noncyclic.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/project/project-\
+abstract.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/project/project-\
+definition.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/sw-meeting/\
+PaulJeanStephenMeeting.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/sw-meeting/sw-\
+post-presentation-notes.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/sw-meeting/sw-\
+pre-meeting-notes.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/wolfram-demos/\
+boolean-nets/boolean-nets.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/wolfram-demos/\
+eca/eca-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2006/wolfram-demos/\
+eca/eca-demo.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/favorite-rule/\
+fr-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/favorite-rule/\
+fr-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/favorite-rule/\
+fr-03-8509.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/favorite-rule/\
+fr-04-103691.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/favorite-rule/\
+fr-05-103258.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/favorite-rule/\
+fr-06-102827.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/favorite-rule/\
+fr-07.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/favorite-rule/\
+fr-08-104743.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/homework/\
+practice1-07.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/homework/\
+practice2-07-evolutions-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/homework/\
+practice2-07-evolutions-02-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/homework/\
+practice2-07-evolutions-02-03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/homework/\
+practice2-07-evolutions-02-04.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/homework/\
+practice2-07-evolutions-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/homework/\
+practice2-07-evolutions-03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/homework/\
+practice2-07.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/homework/\
+practice2-07-probs-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/homework/\
+practice2-07-probs-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/homework/\
+practice2-07-probs-03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/homework/\
+practice2-07-probs-14.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/homework/\
+practice2-07-probs-16.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/lectures/paul-\
+jean/conducting-searches/conducting-searches.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/lectures/paul-\
+jean/conducting-searches/cs-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/lectures/paul-\
+jean/conducting-searches/identifyingCyclicBehavior-edp-nks-ss03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/lectures/paul-\
+jean/example-experiment/ee-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/lectures/paul-\
+jean/example-experiment/ee-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/lectures/paul-\
+jean/example-experiment/ee-03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/lectures/paul-\
+jean/example-experiment/example-experiment.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/lectures/paul-\
+jean/example-project/ep-01..nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/lectures/paul-\
+jean/example-project/ep-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/lectures/paul-\
+jean/example-project/example-project.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/lectures/paul-\
+jean/lecture-notes.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/lectures/paul-\
+jean/mma-qanda/MMA-Q&A.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/logistics/\
+Schedule2007.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/NKS-SS-07-\
+Template.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/poster/poster.\
+nb\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/Poster-Presentation-\
+Template.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/poster/Untitled-\
+5.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/students/\
+ardeshir/ardeshir-poster-materials-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/students/\
+ardeshir/ardeshir-poster.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/students/\
+ardeshir/ardeshir-project-meeting.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/students/\
+ardeshir/PossibleDoublingRules.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/students/\
+ardeshir/project-01-n-2n.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/students/\
+ardeshir/project-02-find-double-step.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/students/\
+ardeshir/project-03-visual-HD-comparison.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/students/\
+ardeshir/project-04-search.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/students/\
+ardeshir/project-05-degree-distribution.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/students/\
+ashutosh/AshutoshGupta - practice1-07.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/students/\
+ashutosh/ashutosh-project-meeting.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/students/\
+ashutosh/Poster-Presentation-Ashutosh-2.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/students/\
+ashutosh/Poster-Presentation-Ashutosh-3.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/students/\
+ashutosh/Poster-Presentation-Ashutosh.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/students/daniel/\
+brainstorm-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/students/daniel/\
+daniel-project-meeting.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/students/daniel/\
+DPN-Poster-Draft2.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/students/daniel/\
+project-01-rec-func.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/students/daniel/\
+project-02-string-replace.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/students/\
+garrett/crossover-graphic.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/students/\
+garrett/garrett-project-02-crossover-graphic.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/students/\
+garrett/garrett-project.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/students/\
+guilherme/guilherme-project-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/students/jane/\
+jane-project-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/students/kate/\
+kate-project-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/students/\
+konstantin/cellularautomatonfluids.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/students/matt/\
+highlightCA.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/students/matt/\
+matt-project-01-polygons.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/students/\
+maurice/TS-3D_version01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/students/ramiro/\
+dancers.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/students/ramiro/\
+demonstration-2D-TM.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/students/ramiro/\
+Poster-Presentation-Ramiro.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/students/ramiro/\
+practice1-07.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/students/ramiro/\
+ramiro-notes.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/students/ramiro/\
+ramiro-project-02-search.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/students/ramiro/\
+ramiro-project-meeting.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/students/ramiro/\
+ramiro-project-notes-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/students/ramiro/\
+ramiro-project-notes-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/students/ramiro/\
+ramiro-project-notes-03-training.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2007/students/ramiro/\
+training-01.02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/demonstrations/\
+hexagonal-outer-totalistic-CA.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/demonstrations/\
+outer-totalistic-2D-CA-with-memory.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/function-\
+paclets/SampleFunctionPaclet-author.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/function-\
+paclets/Shuffle.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/homework/\
+homework08/practice1-08.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/homework/\
+homework08/practice2-08.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/large-range-\
+weighted-totalistic-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/large-range-\
+weighted-totalistic.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/lectures/\
+conducting-searches/conducting-searches-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/lectures/\
+example-experiment/example-experiment-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/lectures/\
+example-experiment/example-experiment-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/lectures/\
+example-project/ep-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/lectures/\
+statistics/statistics-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/NKS-SS-08-\
+Template.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/schedule/\
+Schedule2008.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/students/ben/\
+ben-project-01-062808.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/students/ben/\
+ben-project-meeting-062408.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/students/ben/\
+Rapoport-Final5MinutePresentation-NKSSummerSchool2008-SmallerUpload.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/students/ben/\
+Rapoport-NKS-ProjectDescription-NeuralManifolds-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/students/ben/\
+Rapoport-Practice2a-edited.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/students/ben/\
+Rapoport-Practice2a.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/students/\
+garrett/garrett-project-01-062408.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/students/\
+garrett/garrett-project-02-062408.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/students/\
+garrett/garrett-project-03-062608.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/students/\
+garrett/garrett-project-04-063008.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/students/\
+garrett/garrett-project-05-070108.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/students/\
+garrett/garrett-project-06-070108.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/students/\
+garrett/garrett-project-07-070708.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/students/\
+garrett/garrett-project-meeting-062308.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/students/matt/\
+Kaproth - practice1-08-edited.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/students/matt/\
+Kaproth - practice1-08.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/students/matt/\
+matt-project-01-062608.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/students/matt/\
+matt-project-02-062608.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/students/matt/\
+matt-project-03-062908.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/students/matt/\
+matt-project-04-070108.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/students/matt/\
+matt-project-05-070108.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/students/matt/\
+matt-project-06-070108.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/students/matt/\
+matt-project-07-070108.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/students/matt/\
+matt-project-08-070108.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/students/matt/\
+matt-project-09-070408.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/students/matt/\
+matt-project-10-070408.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/students/matt/\
+matt-project-11-070708.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/students/matt/\
+matt-project-12-070908.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/students/matt/\
+matt-project-13-070908.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/students/matt/\
+matt-project-meeting-062408.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/students/matt/\
+Poster-Presentation-Kaproth-edit.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/students/matt/\
+Poster-Presentation-Kaproth.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/students/sahand/\
+Fundamentals.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/students/sahand/\
+GoRound.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/students/sahand/\
+NKS-AdvancedMathematica-SS-08.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/students/sahand/\
+NKS-Applied-SS-08NG.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/students/sahand/\
+Project-3.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/students/sahand/\
+sahand-project-01-070208.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/students/sahand/\
+sahand-project-02-070208.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/students/sahand/\
+sahand-project-03-070208.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/students/sahand/\
+sahand-project-04-070208.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/students/sahand/\
+sahand-project-meeting-062408.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/students/\
+soumyajit/soumya_cochlea_demonstration.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/students/steven/\
+Seif problems-edited.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2008/students/steven/\
+Seif problems.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2009/lectures/\
+conducting-searches/conducting-searches-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2009/lectures/\
+conducting-searches/conducting-searches-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2009/lectures/\
+conducting-searches/conducting-searches-03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2009/lectures/\
+conducting-searches/conducting-searches.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2009/lectures/\
+conducting-searches/interesting-rules.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2009/lectures/\
+example-experiment/example-experiment.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2009/lectures/jan/\
+Jan_Baetens_Parallel_Computing.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2009/lectures/\
+mathematica-training/training-01-patterns.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2009/lectures/\
+mathematica-training/training-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2009/practice-hw/\
+practice1-09.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2009/practice-hw/\
+practice2-09.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2009/practice-hw/\
+problems/36-rule-73-network/36-rule-73-network.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2009/schedule/\
+Schedule2009.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2009/students/bart/\
+Bart-Hwk-Favourite3ColorRule.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2009/students/bart/\
+bart-project-deliverables.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2009/students/bart/\
+BM-MeetingNotes.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2009/students/bart/\
+CCA-complexity-threshold.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2009/students/bart/\
+project-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2009/students/bart/\
+project-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2009/students/bart/\
+rule-46.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2009/students/\
+epifanio/EM-MeetingNotes.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2009/students/\
+epifanio/ImageExperiments14.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2009/students/\
+epifanio/project-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2009/students/\
+epifanio/project-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2009/students/\
+epifanio/ProjectFunctions.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2009/students/\
+jaiwant/JM-MeetingNotes.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2009/students/\
+jaiwant/paul-jean-146-interesting.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2009/students/\
+jaiwant/paul-jean.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2009/students/tali/\
+multihead-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2009/students/tali/\
+multihead.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2009/students/tali/\
+polyhedra.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2009/students/tali/\
+TB-MeetingNotes.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2009/students/tim/\
+log-analysis.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2009/students/tim/\
+project-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2009/students/tim/\
+project-02-geoip.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2009/students/tim/\
+ScalesLessM3.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2009/students/tim/\
+scrape-midi.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2009/students/tim/\
+tones.wolfram.com/log-analysis.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2009/students/tim/TW-\
+MeetingNotes.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/BasicNKS-I-NG.\
+nb\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/HighlightCA.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/homework/\
+practice-10/practice1-10.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/homework/\
+practice-10/practice2-10.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/homework/\
+problems/prob-4-turning-machine/prob-4-turing-machine.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/lectures/hector/\
+RandomnessNKSSS10Lite.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/lectures/jamie/\
+BasicExperiment.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/lectures/jamie/\
+DataInMathematica.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/lectures/paul-\
+jean/conducting-searches/conducting-searches-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/lectures/paul-\
+jean/conducting-searches/conducting-searches-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/lectures/paul-\
+jean/example-experiment/example-experiment-asynchronous-updating.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/lectures/paul-\
+jean/example-experiment/example-experiment-rule-146-lifetimes.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/lectures/paul-\
+jean/example-experiment/example-experiment-SAW-with-memory.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/lectures/paul-\
+jean/example-project/example-project-ECAM.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/lectures/paul-\
+jean/mathematica-training/training-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/lectures/paul-\
+jean/mathematica-training/training-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/lectures/paul-\
+jean/statistical-methods/example-experiment-SAW-with-memory.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/lectures/paul-\
+jean/statistical-methods/statistical-methods-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/NKS-SS-10-\
+Template.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/notes.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/Poster-\
+Presentation-Template.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/random-notes.nb\
+\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/schedule/Schedule2010.\
+nb\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/schedule/Schedule2010_\
+NKSSS.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/daniel/\
+jaiwant-nksss2009-presentation.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/daniel/\
+NKS2010_cluster.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/daniel/\
+paul-jean.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/daniel/\
+Poster-Presentation-ProgDan.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/daniel/\
+Poster-Presentation-ProgDanpreliminary.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/daniel/\
+Preliminary_Initial Conditions.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/daniel/\
+Preliminary_InitialConditions.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/daniel/\
+project-01-code-20-persistent-structures.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/daniel/\
+project-02-structure-interactions.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/daniel/\
+project-03-sum-populations.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/daniel/\
+Project_Description-edited.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/daniel/\
+project-meeting-notes.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/daniel/\
+project-notes-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/daniel/\
+project-summary/project-summary.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/\
+enrique/eden-model.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/\
+enrique/Poster-Presentation-ebm.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/\
+enrique/practice1-10.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/\
+enrique/practice2-10-first part-edited.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/\
+enrique/practice2-10-first part.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/\
+enrique/project-01-generalized-aggregation.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/\
+enrique/project-02-GAM.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/\
+enrique/project-02-GAM-probabilistic.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/\
+enrique/project-03-GAM-deterministic.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/\
+enrique/project-03-GAM-probabilistic.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/\
+enrique/project-04-GAM-deterministic-explore.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/\
+enrique/project-05-GAM-probabilistic.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/\
+enrique/project-06-GAM-fit-residual-vs-probability.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/\
+enrique/project-07-GAMRuleRandom-neighborhood-dependent.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/\
+enrique/project-08-GAM-probabilistic-with-black-to-white.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/\
+enrique/project-meeting-notes.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/\
+enrique/project-summary/project-summary-enrique.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/\
+enrique/references.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/\
+enrique/stacks.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/john/\
+Poster-Presentation-JohnCicilio-05.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/john/\
+Poster-Presentation-JohnCicilio-Final.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/john/\
+project-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/john/\
+project-02-mw-numbers.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/john/\
+project-03-convergence.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/john/\
+project-04-abs-value.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/john/\
+project-05-julia-set-branching.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/john/\
+project-06-complex-roots.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/john/\
+project-07-notes.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/john/\
+project-meeting-notes.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/\
+olabisi/diaag.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/\
+olabisi/Poster-Presentation-Sound.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/\
+olabisi/project-01-sound.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/\
+olabisi/project-02-sonogram.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/\
+olabisi/project-02-sound.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/\
+olabisi/project-03-todds-idea.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/\
+olabisi/project-04-map-spectrum.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/\
+olabisi/project-05-frequency-values.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/\
+olabisi/project-06-sound-barcode.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/\
+olabisi/project-meeting-notes.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/\
+olabisi/project-summary/project-summary.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2010/students/\
+olabisi/project-summary/project-summary-olabisi.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/demonstrations/\
+mobile-automaton-memory-development.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/demonstrations/\
+mobile-automaton-with-memory.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/demonstrations/\
+pivoting-polymer-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/demonstrations/\
+pivoting-polymer.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/demonstrations/\
+pivoting-polymer/PivotingPolymer.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/interview.nb\"\>\
+", ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/lectures/paul-\
+jean/conducting-searches/conducting-searches.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/lectures/paul-\
+jean/example-experiment/example-experiment-asynchronous-updating-lecture-\
+notes.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/lectures/paul-\
+jean/example-experiment/example-experiment-asynchronous-updating.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/lectures/paul-\
+jean/example-project/example-project-ECAM.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/lectures/paul-\
+jean/live-experiment/2DCellularAutomatonAnimations-source.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/lectures/paul-\
+jean/live-experiment/experiment-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/lectures/paul-\
+jean/mathematica-training/training-01.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/lectures/paul-\
+jean/mathematica-training/training-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/lectures/paul-\
+jean/rule146-reducible/rule146-reducible.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/lectures/paul-\
+jean/rule146-reducible/rule146-two-particle-interactions.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/lectures/paul-\
+jean/statistics/example-experiment-SAW-with-memory.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/lectures/\
+vitaliy/JamieWilliams2010BasicExperiment.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/NKSPrograms/\
+NKSPrograms-02.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/NKSPrograms/\
+NKSPrograms-03.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/NKSPrograms/\
+NKSPrograms-04.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/NKSPrograms/\
+NKSPrograms-05.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/NKSPrograms/\
+NKSPrograms-06.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/NKSPrograms/\
+NKSPrograms-07.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/NKSPrograms/\
+NKSPrograms-08.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/NKSPrograms/\
+NKSPrograms-09.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/NKSPrograms/\
+NKSPrograms-10.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/NKSPrograms/\
+NKSPrograms-11.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/NKSPrograms/\
+NKSPrograms-12.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/Poster-\
+Presentation-Template.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/practice-11/\
+practice1-11.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/practice-11/\
+practice2-11.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/schedule/\
+PresentationClock.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/schedule/\
+presentation-order.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/schedule/\
+Schedule2011.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/students/carlo/\
+project-meeting-carlo.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/students/\
+enrique/Growth in 1D substitution systems with 2 colors & up to 1 neighbor.nb\
+\"\>", ",", \
+"\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/students/enrique/poster/\
+Poster-Presentation-Enrique.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/students/\
+enrique/project-01-elegans-lineage.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/students/\
+enrique/project-02-ce-lineage-xml.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/students/\
+enrique/project-03-ss-growth.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/students/\
+enrique/project-04-elegans-tree-1.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/students/\
+enrique/project-meeting-enrique.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/students/jovan/\
+project-01-rule-24-right-neighbor-column.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/students/jovan/\
+project-02-rule-14.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/students/jovan/\
+project-03-todd-code-stripes.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/students/jovan/\
+project-04-demonstration.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/students/jovan/\
+project-meeting-jovan.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/students/jovan/\
+unscramble-CA-demonstration.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/students/paule/\
+BasicExperiment.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/students/paule/\
+poster/NKS2011SS_Poster_Paule-edited.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/students/paule/\
+poster/NKS2011SS_Poster_Paule.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/students/paule/\
+project-01-delay-MA.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/students/paule/\
+project-02-random-init.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/students/paule/\
+project-03-rule-icon.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/students/paule/\
+project-04-whole-rule-space.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/students/paule/\
+project-05-compressed-evolution.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/students/paule/\
+project-06-poster-material.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/students/paule/\
+project-07-rule-icon-improved.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/students/paule/\
+project-meeting-paule.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/students/sung/\
+cell-populations.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/students/sung/\
+project-01-basic-pivot-events.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/students/sung/\
+project-02-exp-distr-pivot-events.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/students/sung/\
+project-04-prob-distribution.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/students/sung/\
+project-05-monte-carlo-boltzmann.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/students/sung/\
+project-06-conformer-plot.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/students/sung/\
+project-07-wait-time-distribution.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/students/sung/\
+project-08-uniform-pivot-distribution.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/students/sung/\
+project-09-poster-materials.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/students/sung/\
+project-10-radius-of-gyration.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/students/sung/\
+project-11-equilibration.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/students/sung/\
+project-12-hydrophobicity.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/students/sung/\
+project-13-pivoting-animation.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/students/sung/\
+project-14-self-avoiding.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/students/sung/\
+project-meeting-sung.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/students/sylvia/\
+project-01-marc.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/students/sylvia/\
+project-02-TMPM-calculator.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/students/sylvia/\
+project-03-visualization-ideas.nb\"\>", 
+   ",", "\<\"/Users/pauljean/Dropbox/nks/summer-school/SS2011/students/sylvia/\
+project-meeting-sylvia.nb\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{{3.7049087062762623`*^9, 3.704908719696414*^9}, 
+   3.7049089759379797`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"nbFiles", "[", 
+  RowBox[{"[", "1", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.704909039303784*^9, 3.704909043012288*^9}}],
+
+Cell[BoxData["\<\"/Users/pauljean/Dropbox/nks/batch/010506/rule18-1-5-2006.nb\
+\"\>"], "Output",
+ CellChangeTimes->{3.704909043482952*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"StringJoin", "[", 
+  RowBox[{"Riffle", "[", 
+   RowBox[{
+    RowBox[{"StringSplit", "[", 
+     RowBox[{
+      RowBox[{"FileNameTake", "[", 
+       RowBox[{
+        RowBox[{"nbFiles", "[", 
+         RowBox[{"[", "1", "]"}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"6", ",", 
+          RowBox[{"-", "1"}]}], "}"}]}], "]"}], ",", "\"\</\>\""}], "]"}], 
+    ",", "\"\< \>\""}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.704909225476008*^9, 3.704909315677017*^9}}],
+
+Cell[BoxData["\<\"batch 010506 rule18-1-5-2006.nb\"\>"], "Output",
+ CellChangeTimes->{{3.704909245165491*^9, 3.704909316401107*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"exportNotebook", "[", "\[IndentingNewLine]", 
+  RowBox[{
+  "\"\</Users/pauljean/Dropbox/nks/batch/010506/rule18-1-5-2006.nb\>\"", ",", 
+   "\[IndentingNewLine]", "\"\</Users/pauljean/Dropbox/research-blog/\>\"", 
+   ",", "\[IndentingNewLine]", "500", ",", "\[IndentingNewLine]", 
+   "\"\<batch 010506 rule18-1-5-2006.nb\>\""}], "\[IndentingNewLine]", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.704890257782971*^9, 3.70489029177413*^9}, {
+  3.704909060016905*^9, 3.704909076391507*^9}, {3.704909209514629*^9, 
+  3.7049092118971853`*^9}, {3.7049093256983433`*^9, 3.704909337354492*^9}}],
+
+Cell[BoxData["\<\"/Users/pauljean/Dropbox/research-blog/_posts/2017-05-27-\
+rule18-1-5-2006.md\"\>"], "Output",
+ CellChangeTimes->{3.704909346240658*^9}]
+}, Open  ]]
+},
+WindowSize->{808, 755},
+WindowMargins->{{Automatic, 310}, {Automatic, 6}},
+FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (September \
+21, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 380, 9, 32, "Input"],
+Cell[CellGroupData[{
+Cell[963, 33, 350, 8, 32, "Input"],
+Cell[1316, 43, 178837, 3064, 52155, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[180190, 3112, 149, 3, 32, "Input"],
+Cell[180342, 3117, 138, 2, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[180517, 3124, 499, 14, 32, "Input"],
+Cell[181019, 3140, 132, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[181188, 3146, 607, 10, 138, "Input"],
+Cell[181798, 3158, 153, 2, 32, "Output"]
+}, Open  ]]
+}
+]
+*)
+
