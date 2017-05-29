@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    182688,       3193]
-NotebookOptionsPosition[    181967,       3163]
-NotebookOutlinePosition[    182326,       3179]
-CellTagsIndexPosition[    182283,       3176]
+NotebookDataLength[    196143,       3541]
+NotebookOptionsPosition[    193548,       3455]
+NotebookOutlinePosition[    194235,       3481]
+CellTagsIndexPosition[    194101,       3475]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -3159,7 +3159,299 @@ Cell[BoxData[
 Cell[BoxData["\<\"/Users/pauljean/Dropbox/research-blog/_posts/2017-05-27-\
 rule18-1-5-2006.md\"\>"], "Output",
  CellChangeTimes->{3.704909346240658*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Length", "@", "nbFiles"}]], "Input"],
+
+Cell[BoxData["1645"], "Output",
+ CellChangeTimes->{3.7049723161784983`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FileNameTake", "[", 
+  RowBox[{
+   RowBox[{"nbFiles", "[", 
+    RowBox[{"[", "1", "]"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"6", ",", 
+     RowBox[{"-", "1"}]}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.70497236769943*^9, 3.7049723678256063`*^9}}],
+
+Cell[BoxData["\<\"batch/010506/rule18-1-5-2006.nb\"\>"], "Output",
+ CellChangeTimes->{3.704972368536541*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FileNameTake", "[", 
+  RowBox[{
+   RowBox[{"nbFiles", "[", 
+    RowBox[{"[", "2", "]"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"6", ",", 
+     RowBox[{"-", "1"}]}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.70497236769943*^9, 3.704972374340523*^9}}],
+
+Cell[BoxData["\<\"batch/010606/ECAM-run-times.nb\"\>"], "Output",
+ CellChangeTimes->{3.704972374536632*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "Do"}]], "Input",
+ CellChangeTimes->{{3.704972436284689*^9, 3.704972436878942*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox["\<\"\\!\\(\\*RowBox[{\\\"Do\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"expr\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"n\\\", \\\
+\"TI\\\"]}], \\\"]\\\"}]\\) evaluates \\!\\(\\*StyleBox[\\\"expr\\\", \
+\\\"TI\\\"]\\) \\!\\(\\*StyleBox[\\\"n\\\", \\\"TI\\\"]\\) times. \
+\\n\\!\\(\\*RowBox[{\\\"Do\\\", \\\"[\\\", RowBox[{StyleBox[\\\"expr\\\", \
+\\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{StyleBox[\\\"i\\\", \\\"TI\
+\\\"], \\\",\\\", SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], \
+StyleBox[\\\"max\\\", \\\"TI\\\"]]}], \\\"}\\\"}]}], \\\"]\\\"}]\\) evaluates \
+\\!\\(\\*StyleBox[\\\"expr\\\", \\\"TI\\\"]\\) with the variable \
+\\!\\(\\*StyleBox[\\\"i\\\", \\\"TI\\\"]\\) successively taking on the values \
+1 through \\!\\(\\*SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], \
+StyleBox[\\\"max\\\", \\\"TI\\\"]]\\) (in steps of 1). \\n\\!\\(\\*RowBox[{\\\
+\"Do\\\", \\\"[\\\", RowBox[{StyleBox[\\\"expr\\\", \\\"TI\\\"], \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{StyleBox[\\\"i\\\", \\\"TI\\\"], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], StyleBox[\\\"min\\\", \
+\\\"TI\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], \
+StyleBox[\\\"max\\\", \\\"TI\\\"]]}], \\\"}\\\"}]}], \\\"]\\\"}]\\) starts \
+with \\!\\(\\*RowBox[{StyleBox[\\\"i\\\", \\\"TI\\\"], \\\"=\\\", \
+SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], StyleBox[\\\"min\\\", \
+\\\"TI\\\"]]}]\\). \\n\\!\\(\\*RowBox[{\\\"Do\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"expr\\\", \\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{StyleBox[\\\"i\\\", \\\"TI\\\"], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], StyleBox[\\\"min\\\", \
+\\\"TI\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], \
+StyleBox[\\\"max\\\", \\\"TI\\\"]], \\\",\\\", StyleBox[\\\"di\\\", \
+\\\"TI\\\"]}], \\\"}\\\"}]}], \\\"]\\\"}]\\) uses steps \
+\\!\\(\\*StyleBox[\\\"di\\\", \\\"TI\\\"]\\). \\n\\!\\(\\*RowBox[{\\\"Do\\\", \
+\\\"[\\\", RowBox[{StyleBox[\\\"expr\\\", \\\"TI\\\"], \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{StyleBox[\\\"i\\\", \\\"TI\\\"], \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], \
+StyleBox[\\\"1\\\", \\\"TR\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"i\\\", \
+\\\"TI\\\"], StyleBox[\\\"2\\\", \\\"TR\\\"]], \\\",\\\", StyleBox[\\\"\
+\[Ellipsis]\\\", \\\"TR\\\"]}], \\\"}\\\"}]}], \\\"}\\\"}]}], \\\"]\\\"}]\\) \
+uses the successive values \\!\\(\\*SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\
+\"], StyleBox[\\\"1\\\", \\\"TR\\\"]]\\), \
+\\!\\(\\*SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], StyleBox[\\\"2\\\", \\\
+\"TR\\\"]]\\), \[Ellipsis].\\n\\!\\(\\*RowBox[{\\\"Do\\\", \\\"[\\\", \
+RowBox[{StyleBox[\\\"expr\\\", \\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{StyleBox[\\\"i\\\", \\\"TI\\\"], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], StyleBox[\\\"min\\\", \
+\\\"TI\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], \
+StyleBox[\\\"max\\\", \\\"TI\\\"]]}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\
+\", RowBox[{StyleBox[\\\"j\\\", \\\"TI\\\"], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"j\\\", \\\"TI\\\"], StyleBox[\\\"min\\\", \
+\\\"TI\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"j\\\", \\\"TI\\\"], \
+StyleBox[\\\"max\\\", \\\"TI\\\"]]}], \\\"}\\\"}], \\\",\\\", StyleBox[\\\"\
+\[Ellipsis]\\\", \\\"TR\\\"]}], \\\"]\\\"}]\\) evaluates \\!\\(\\*StyleBox[\\\
+\"expr\\\", \\\"TI\\\"]\\) looping over different values of \
+\\!\\(\\*StyleBox[\\\"j\\\", \\\"TI\\\"]\\) etc. for each \
+\\!\\(\\*StyleBox[\\\"i\\\", \\\"TI\\\"]\\). \"\>", "MSG"], 
+  "\[NonBreakingSpace]", 
+  ButtonBox[
+   StyleBox["\[RightSkeleton]", "SR"],
+   Active->True,
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/Do"]}]], "Print", "PrintUsage",
+ CellChangeTimes->{3.704972437525407*^9},
+ CellTags->"Info173704958037-4239037"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "Print"}]], "Input",
+ CellChangeTimes->{{3.704972484752748*^9, 3.704972485881782*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox["\<\"\\!\\(\\*RowBox[{\\\"Print\\\", \\\"[\\\", \
+StyleBox[\\\"expr\\\", \\\"TI\\\"], \\\"]\\\"}]\\) prints \
+\\!\\(\\*StyleBox[\\\"expr\\\", \\\"TI\\\"]\\) as output. \"\>", "MSG"], 
+  "\[NonBreakingSpace]", 
+  ButtonBox[
+   StyleBox["\[RightSkeleton]", "SR"],
+   Active->True,
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/Print"]}]], "Print", "PrintUsage",
+ CellChangeTimes->{3.7049724862183104`*^9},
+ CellTags->"Info183704958086-4239037"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Do", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Print", "[", 
+     RowBox[{"Framed", "[", 
+      RowBox[{
+       RowBox[{"nbFiles", "[", 
+        RowBox[{"[", "i", "]"}], "]"}], ",", 
+       RowBox[{"Background", "\[Rule]", "LightYellow"}]}], "]"}], "]"}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"mdFile", "=", 
+     RowBox[{"exportNotebook", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"nbFiles", "[", 
+        RowBox[{"[", "i", "]"}], "]"}], ",", "\[IndentingNewLine]", 
+       "\"\</Users/pauljean/Dropbox/research-blog/\>\"", ",", 
+       "\[IndentingNewLine]", "500", ",", "\[IndentingNewLine]", 
+       RowBox[{"StringJoin", "[", 
+        RowBox[{"Riffle", "[", 
+         RowBox[{
+          RowBox[{"StringSplit", "[", 
+           RowBox[{
+            RowBox[{"FileNameTake", "[", 
+             RowBox[{
+              RowBox[{"nbFiles", "[", 
+               RowBox[{"[", "i", "]"}], "]"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"6", ",", 
+                RowBox[{"-", "1"}]}], "}"}]}], "]"}], ",", "\"\</\>\""}], 
+           "]"}], ",", "\"\< \>\""}], "]"}], "]"}]}], "\[IndentingNewLine]", 
+      "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Print", "[", "mdFile", "]"}], ";"}], ",", "\[IndentingNewLine]", 
+   
+   RowBox[{"{", 
+    RowBox[{"i", ",", "2", ",", 
+     RowBox[{"Length", "@", "nbFiles"}]}], "}"}]}], "\[IndentingNewLine]", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.704972244004075*^9, 3.704972245818166*^9}, {
+   3.704972290118021*^9, 3.70497234702176*^9}, {3.704972418474038*^9, 
+   3.704972477737406*^9}, {3.704972511033148*^9, 3.7049725758332577`*^9}, {
+   3.7049726072949038`*^9, 3.7049726175640697`*^9}, 3.704972773262528*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FrameBox["\<\"/Users/pauljean/Dropbox/nks/batch/010606/ECAM-run-times.nb\"\>",
+  Background->RGBColor[1, 1, 0.85],
+  StripOnInput->False]], "Print",
+ CellChangeTimes->{3.704972547835053*^9, 3.704972588159459*^9, 
+  3.704972628283934*^9}],
+
+Cell[BoxData["\<\"/Users/pauljean/Dropbox/research-blog/_posts/2017-05-28-\
+ECAM-run-times.md\"\>"], "Print",
+ CellChangeTimes->{3.704972547835053*^9, 3.704972588159459*^9, 
+  3.7049726288434057`*^9}],
+
+Cell[BoxData[
+ FrameBox["\<\"/Users/pauljean/Dropbox/nks/batch/021606/021606-testqis1-batch.\
+nb\"\>",
+  Background->RGBColor[1, 1, 0.85],
+  StripOnInput->False]], "Print",
+ CellChangeTimes->{3.704972547835053*^9, 3.704972588159459*^9, 
+  3.7049726288546877`*^9}],
+
+Cell[BoxData["\<\"/Users/pauljean/Dropbox/research-blog/_posts/2017-05-28-\
+021606-testqis1-batch.md\"\>"], "Print",
+ CellChangeTimes->{3.704972547835053*^9, 3.704972588159459*^9, 
+  3.7049726291794558`*^9}],
+
+Cell[BoxData[
+ FrameBox["\<\"/Users/pauljean/Dropbox/nks/batch/022306/022306.nb\"\>",
+  Background->RGBColor[1, 1, 0.85],
+  StripOnInput->False]], "Print",
+ CellChangeTimes->{3.704972547835053*^9, 3.704972588159459*^9, 
+  3.7049726291879*^9}],
+
+Cell[BoxData["\<\"/Users/pauljean/Dropbox/research-blog/_posts/2017-05-28-\
+022306.md\"\>"], "Print",
+ CellChangeTimes->{3.704972547835053*^9, 3.704972588159459*^9, 
+  3.70497262953981*^9}],
+
+Cell[BoxData[
+ FrameBox["\<\"/Users/pauljean/Dropbox/nks/batch/022306.yeti.022306-15:27:24/\
+022306/022306.nb\"\>",
+  Background->RGBColor[1, 1, 0.85],
+  StripOnInput->False]], "Print",
+ CellChangeTimes->{3.704972547835053*^9, 3.704972588159459*^9, 
+  3.704972629550692*^9}],
+
+Cell[BoxData["\<\"/Users/pauljean/Dropbox/research-blog/_posts/2017-05-28-\
+022306.md\"\>"], "Print",
+ CellChangeTimes->{3.704972547835053*^9, 3.704972588159459*^9, 
+  3.704972629972077*^9}],
+
+Cell[BoxData[
+ FrameBox["\<\"/Users/pauljean/Dropbox/nks/batch/batch-template-02.nb\"\>",
+  Background->RGBColor[1, 1, 0.85],
+  StripOnInput->False]], "Print",
+ CellChangeTimes->{3.704972547835053*^9, 3.704972588159459*^9, 
+  3.7049726299830647`*^9}],
+
+Cell[BoxData["\<\"/Users/pauljean/Dropbox/research-blog/_posts/2017-05-28-\
+batch-template-02.md\"\>"], "Print",
+ CellChangeTimes->{3.704972547835053*^9, 3.704972588159459*^9, 
+  3.704972630331949*^9}],
+
+Cell[BoxData[
+ FrameBox["\<\"/Users/pauljean/Dropbox/nks/batch/batch-template.nb\"\>",
+  Background->RGBColor[1, 1, 0.85],
+  StripOnInput->False]], "Print",
+ CellChangeTimes->{3.704972547835053*^9, 3.704972588159459*^9, 
+  3.70497263034173*^9}],
+
+Cell[BoxData["\<\"/Users/pauljean/Dropbox/research-blog/_posts/2017-05-28-\
+batch-template.md\"\>"], "Print",
+ CellChangeTimes->{3.704972547835053*^9, 3.704972588159459*^9, 
+  3.7049726308429956`*^9}],
+
+Cell[BoxData[
+ FrameBox["\<\"/Users/pauljean/Dropbox/nks/batch/.nb\"\>",
+  Background->RGBColor[1, 1, 0.85],
+  StripOnInput->False]], "Print",
+ CellChangeTimes->{3.704972547835053*^9, 3.704972588159459*^9, 
+  3.704972630855179*^9}],
+
+Cell[BoxData["\<\"/Users/pauljean/Dropbox/research-blog/_posts/2017-05-28-.nb.\
+md\"\>"], "Print",
+ CellChangeTimes->{3.704972547835053*^9, 3.704972588159459*^9, 
+  3.70497263126123*^9}],
+
+Cell[BoxData[
+ FrameBox["\<\"/Users/pauljean/Dropbox/nks/blog/blog-colors.nb\"\>",
+  Background->RGBColor[1, 1, 0.85],
+  StripOnInput->False]], "Print",
+ CellChangeTimes->{3.704972547835053*^9, 3.704972588159459*^9, 
+  3.704972631271976*^9}],
+
+Cell[BoxData["\<\"/Users/pauljean/Dropbox/research-blog/_posts/2017-05-28-\
+blog-colors.md\"\>"], "Print",
+ CellChangeTimes->{3.704972547835053*^9, 3.704972588159459*^9, 
+  3.704972632087372*^9}],
+
+Cell[BoxData[
+ FrameBox["\<\"/Users/pauljean/Dropbox/nks/blog/blogtools.nb\"\>",
+  Background->RGBColor[1, 1, 0.85],
+  StripOnInput->False]], "Print",
+ CellChangeTimes->{3.704972547835053*^9, 3.704972588159459*^9, 
+  3.704972632095056*^9}],
+
+Cell[BoxData["\<\"/Users/pauljean/Dropbox/research-blog/_posts/2017-05-28-\
+blogtools.md\"\>"], "Print",
+ CellChangeTimes->{3.704972547835053*^9, 3.704972588159459*^9, 
+  3.70497263280763*^9}]
 }, Open  ]]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{3.7049725919152203`*^9}]
 },
 WindowSize->{808, 755},
 WindowMargins->{{Automatic, 310}, {Automatic, 6}},
@@ -3171,10 +3463,20 @@ StyleDefinitions->"Default.nb"
 
 (* Internal cache information *)
 (*CellTagsOutline
-CellTagsIndex->{}
+CellTagsIndex->{
+ "Info173704958037-4239037"->{
+  Cell[183140, 3210, 3819, 59, 139, "Print",
+   CellTags->"Info173704958037-4239037"]},
+ "Info183704958086-4239037"->{
+  Cell[187113, 3278, 480, 12, 43, "Print",
+   CellTags->"Info183704958086-4239037"]}
+ }
 *)
 (*CellTagsIndex
-CellTagsIndex->{}
+CellTagsIndex->{
+ {"Info173704958037-4239037", 193873, 3466},
+ {"Info183704958086-4239037", 193992, 3469}
+ }
 *)
 (*NotebookFileOutline
 Notebook[{
@@ -3194,7 +3496,53 @@ Cell[181019, 3140, 132, 1, 32, "Output"]
 Cell[CellGroupData[{
 Cell[181188, 3146, 607, 10, 138, "Input"],
 Cell[181798, 3158, 153, 2, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[181988, 3165, 60, 1, 32, "Input"],
+Cell[182051, 3168, 75, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[182163, 3174, 285, 8, 32, "Input"],
+Cell[182451, 3184, 108, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[182596, 3190, 283, 8, 32, "Input"],
+Cell[182882, 3200, 107, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[183026, 3206, 111, 2, 32, "Input"],
+Cell[183140, 3210, 3819, 59, 139, "Print",
+ CellTags->"Info173704958037-4239037"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[186996, 3274, 114, 2, 32, "Input"],
+Cell[187113, 3278, 480, 12, 43, "Print",
+ CellTags->"Info183704958086-4239037"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[187630, 3295, 1745, 41, 243, "Input"],
+Cell[CellGroupData[{
+Cell[189400, 3340, 252, 5, 36, "Print"],
+Cell[189655, 3347, 200, 3, 24, "Print"],
+Cell[189858, 3352, 263, 6, 36, "Print"],
+Cell[190124, 3360, 207, 3, 24, "Print"],
+Cell[190334, 3365, 242, 5, 36, "Print"],
+Cell[190579, 3372, 189, 3, 24, "Print"],
+Cell[190771, 3377, 274, 6, 36, "Print"],
+Cell[191048, 3385, 190, 3, 24, "Print"],
+Cell[191241, 3390, 250, 5, 36, "Print"],
+Cell[191494, 3397, 201, 3, 24, "Print"],
+Cell[191698, 3402, 244, 5, 36, "Print"],
+Cell[191945, 3409, 200, 3, 24, "Print"],
+Cell[192148, 3414, 231, 5, 36, "Print"],
+Cell[192382, 3421, 186, 3, 24, "Print"],
+Cell[192571, 3426, 241, 5, 36, "Print"],
+Cell[192815, 3433, 195, 3, 24, "Print"],
+Cell[193013, 3438, 239, 5, 36, "Print"],
+Cell[193255, 3445, 192, 3, 24, "Print"]
 }, Open  ]]
+}, Open  ]],
+Cell[193474, 3452, 70, 1, 32, "Input"]
 }
 ]
 *)
