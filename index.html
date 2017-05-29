@@ -11,9 +11,11 @@ layout: default
               <div class="row">
                   <h4 class="media-heading"><a class="post-link" href={{ post.url | prepend: site.baseurl }}>{{ post.title }}</a></h4>
                   <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+                  {% if post.gif %}
                   <a href={{ post.url | prepend: site.baseurl }}>
                       <img class="cover_image" src={{ post.gif | prepend: site.baseurl }} alt={{ post.title }} width="100%"/>
                   </a>
+                  {% endif %}
               </div>
           </div>
       </li>
