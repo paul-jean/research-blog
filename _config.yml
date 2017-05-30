@@ -9,7 +9,7 @@
  title: Research Blog
 email: me@me.com
 description: Notebooks from my computing research
-baseurl: "/research-blog"  # the subpath of your site, e.g. /blog
+baseurl: "/research-blog/"  # the subpath of your site, e.g. /blog
 url: "http://pauljean.github.io" # the base hostname & protocol for your site
 twitter_username: @rule146
 github_username: paul-jean
