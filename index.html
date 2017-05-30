@@ -9,11 +9,11 @@ layout: default
       <li>
           <div class="container">
               <div class="row">
-                  <h4 class="media-heading"><a class="post-link" href={{ post.url | prepend: site.baseurl }}>{{ post.title }}</a></h4>
+                  <h4 class="media-heading"><a class="post-link" href={{ post.url | relative_url }}>{{ post.title }}</a></h4>
                   <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
                   {% if post.gif %}
                   <a href={{ post.url | relative_url }}>
-                      <img class="cover_image" src={{ post.gif | relative_url }} alt={{ post.title }} width="100%"/>
+                      <img class="cover_image" src={{ post.gif | relative_url }} alt="{{ post.title }}" width="100%"/>
                   </a>
                   {% endif %}
               </div>
